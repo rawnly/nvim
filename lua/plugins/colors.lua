@@ -1,43 +1,19 @@
 return {
+  -- "sainnhe/everforest",
   {
-    "scottmckendry/cyberdream.nvim",
-    lazy = false,
-    priority = 1000,
-    config = function()
-      require("cyberdream").setup {
-        transparent = true,
-        italic_comments = true,
-        borderless_telescope = false,
-        terminal_colors = false,
-      }
-    end,
-  },
-  { "rose-pine/neovim", name = "rose-pine" },
-  "sainnhe/everforest",
-  "folke/tokyonight.nvim",
-  "sainnhe/gruvbox-material",
-  "nyoom-engineering/oxocarbon.nvim",
-  { "kepano/flexoki-neovim", name = "flexoki" },
-  "ellisonleao/gruvbox.nvim",
-  "lunacookies/vim-substrata",
-  {
-    "olivercederborg/poimandres.nvim",
-    lazy = false,
-    priority = 1000,
-    config = function()
-      require("poimandres").setup {
-        -- leave this setup function empty for default config
-        -- or refer to the configuration section
-        -- for configuration options
-      }
-    end,
+    "fynnfluegge/monet.nvim",
+    name = "monet",
+    opts = {
+      transparent_background = true,
+      dark_mode = true,
+    },
   },
   {
     "rebelot/kanagawa.nvim",
     lazy = false,
     priority = 1000,
     opts = function()
-      local c = require("kanagawa.colors").setup({ theme = "dragon" }).palette
+      local c = require("kanagawa.colors").setup({ theme = "wave" }).palette
 
       local BG = c.dragonBlack3
       local ALMOST_BG = c.dragonBlack4
@@ -57,7 +33,7 @@ return {
             },
           },
         },
-        overrides = function(colors)
+        overrides = function()
           local overrides = {
             -- bufferline
             BufferLineFill = { bg = BG },
@@ -107,27 +83,5 @@ return {
         end,
       }
     end,
-    -- { "srcery-colors/srcery-vim", as = "srcery" },
-    -- "jaredgorski/SpaceCamp",
-    -- "Shatur/neovim-ayu",
-    -- "cocopon/iceberg.vim",
-    -- "nikolvs/vim-sunbather",
-    -- "Mofiqul/adwaita.nvim",
-    -- {
-    --   "marko-cerovac/material.nvim",
-    --   opts = {
-    --     plugins = {
-    --       "telescope",
-    --       "dap",
-    --       "which-key",
-    --     },
-    --   },
-    -- },
-    -- {
-    --   "AlexvZyl/nordic.nvim",
-    --   lazy = false,
-    --   priority = 1000,
-    --   config = function() require("nordic").load() end,
-    -- },
   },
 }

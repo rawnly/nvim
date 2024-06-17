@@ -1,6 +1,7 @@
 return {
   "ericpruitt/tmux.vim",
   "dnlhc/glance.nvim",
+  "kevinhwang91/rnvimr",
   {
     "m4xshen/hardtime.nvim",
     opts = {
