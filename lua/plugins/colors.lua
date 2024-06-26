@@ -1,15 +1,8 @@
 return {
-  -- "sainnhe/everforest",
-  -- "sainnhe/gruvbox-material",
-  -- "nyoom-engineering/oxocarbon.nvim",
-  -- { "kepano/flexoki-neovim", name = "flexoki" },
+  "nyoom-engineering/oxocarbon.nvim",
+  "RRethy/base16-nvim",
+  { "typicode/bg.nvim", lazy = false },
   -- { "rose-pine/neovim", name = "rose-pine" },
-  -- {
-  --   "olivercederborg/poimandres.nvim",
-  --   lazy = false,
-  --   priority = 1000,
-  --   config = function() require("poimandres").setup {} end,
-  -- },
   {
     "fynnfluegge/monet.nvim",
     name = "monet",
