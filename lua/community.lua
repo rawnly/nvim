@@ -33,4 +33,7 @@ return {
   { import = "astrocommunity.workflow.hardtime-nvim" },
   { import = "astrocommunity.debugging.nvim-bqf" },
   { import = "astrocommunity.neovim-lua-development.lazydev-nvim" },
+
+  -- colors
+  { import = "astrocommunity.colorscheme.kanagawa-paper-nvim" },
 }
