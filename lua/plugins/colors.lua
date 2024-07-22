@@ -1,5 +1,6 @@
 return {
   -- "sainnhe/everforest",
+  { "Everblush/nvim", as = "everblush" },
   {
     "fynnfluegge/monet.nvim",
     name = "monet",
