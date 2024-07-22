@@ -1,7 +1,32 @@
 return {
   "ericpruitt/tmux.vim",
   "dnlhc/glance.nvim",
-  "kevinhwang91/rnvimr",
+
+  -- commands autocomplete like helix
+  { "gelguy/wilder.nvim", lazy = false, opts = {
+    modes = { ":", "?", "/" },
+  } },
+  {
+    "chrisgrieser/nvim-spider",
+    lazy = true,
+    keys = {
+      {
+        "w",
+        "<cmd>lua require('spider').motion('w')<CR>",
+        mode = { "n", "o", "x" },
+      },
+      {
+        "b",
+        "<cmd>lua require('spider').motion('b')<CR>",
+        mode = { "n", "o", "x" },
+      },
+      {
+        "e",
+        "<cmd>lua require('spider').motion('e')<CR>",
+        mode = { "n", "o", "x" },
+      },
+    },
+  },
   {
     "m4xshen/hardtime.nvim",
     opts = {

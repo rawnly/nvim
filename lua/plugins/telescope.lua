@@ -46,6 +46,8 @@ return {
       return string.format("%s\t\t%s", tail, parent)
     end
 
+    local actions = require "telescope.actions"
+
     return require("astrocore").extend_tbl(opts, {
       pickers = {
         find_files = {
@@ -99,7 +101,7 @@ return {
           "*/.next/*",
         },
         history = {
-          path = "~/.local/share/nvim/databases/telescope_history.sqlite3",
+          path = "~/.local/share/nvim/databases/telescope.sqlite3",
           limit = 1000,
         },
         previewer = false,
@@ -113,6 +115,8 @@ return {
           },
           i = {
             ["<c-s>"] = flash,
+            ["<c-p>"] = actions.cycle_history_prev,
+            ["<c-n>"] = actions.cycle_history_next,
           },
         },
       },
