@@ -4,11 +4,7 @@ return {
     { "kkharji/sqlite.lua" },
     { "nvim-telescope/telescope-smart-history.nvim", requires = { "kkharji/sqlite.lua" } },
     "nvim-lua/popup.nvim",
-    "jvgrootveld/telescope-zoxide",
-    {
-      "nvim-telescope/telescope-fzf-native.nvim",
-      build = "make",
-    },
+    { "natecraddock/telescope-zf-native.nvim" },
   },
   opts = function(_, opts)
     local get_icon = require("astroui").get_icon
@@ -58,20 +54,10 @@ return {
             prompt_position = "top",
             preview_cutoff = 120,
           },
-          find_command = {
-            "rg",
-            "--files",
-            "--color=never",
-            "--smart-case",
-            "--trim",
-            "--hidden",
-            "--glob",
-            "!**/.git/*",
-          },
         },
         git_files = {
           previewer = false,
-          path_display = formattedName,
+          -- path_display = formattedName,
           layout_config = {
             height = 0.4,
             prompt_position = "top",
@@ -121,26 +107,13 @@ return {
         },
       },
       extensions = {
-        -- frecency = {
-        --   default_workspace = "CWD",
-        --   show_scores = true,
-        --   disable_devicons = false,
-        --   ignore_patterns = {
-        --     "*.git/*",
-        --     "*/tmp/*",
-        --     "*/lua-language-server/*",
-        --     "*/node_modules/*",
-        --     "*/target/*",
-        --   },
-        -- },
-        zoxide = {
-          prompt_title = "[ Walking on the moon ]",
-        },
-        fzf = {
-          fuzzy = true,
-          override_generic_sorter = true,
-          override_file_sorter = true,
-          case_mode = "smart_case",
+        ["zf-native"] = {
+          file = {
+            smart_case = true,
+            enable = true,
+            highlight_results = true,
+            match_filename = true,
+          },
         },
       },
     })
@@ -149,7 +122,6 @@ return {
     require "astronvim.plugins.configs.telescope"(...)
 
     local telescope = require "telescope"
-    telescope.load_extension "zoxide"
-    telescope.load_extension "fzf"
+    telescope.load_extension "zf-native"
   end,
 }

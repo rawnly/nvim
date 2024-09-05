@@ -1,6 +1,7 @@
 return {
   "ericpruitt/tmux.vim",
   "dnlhc/glance.nvim",
+  "danilamihailov/beacon.nvim",
 
   -- commands autocomplete like helix
   { "gelguy/wilder.nvim", lazy = false, opts = {

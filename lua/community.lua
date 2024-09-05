@@ -31,7 +31,7 @@ return {
   { import = "astrocommunity.syntax.vim-sandwich" },
   { import = "astrocommunity.recipes.neo-tree-dark" },
   { import = "astrocommunity.workflow.hardtime-nvim" },
-  { import = "astrocommunity.debugging.nvim-bqf" },
+  { import = "astrocommunity.quickfix.nvim-bqf" },
   { import = "astrocommunity.neovim-lua-development.lazydev-nvim" },
 
   -- colors
