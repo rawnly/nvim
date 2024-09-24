@@ -105,6 +105,11 @@ return {
           ":Glance type_definitions<CR>",
           desc = "Glance type_definitions",
         },
+
+        ["<Leader>uN"] = {
+          "<cmd>lua require('no-neck-pain').toggle()<CR>",
+          desc = "Toggle No Neck Pain",
+        },
       },
       t = {
         -- setting a mapping to false will disable it
