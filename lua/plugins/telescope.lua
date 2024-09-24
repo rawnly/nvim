@@ -11,6 +11,7 @@ return {
     },
   },
   opts = function(_, opts)
+    local actions = require "telescope.actions"
     local get_icon = require("astroui").get_icon
 
     local config = require "telescope.config"
@@ -28,6 +29,13 @@ return {
       if parent == "." then return tail end
       return string.format("%s\t\t%s", tail, parent)
     end
+
+    local mappings = {
+      i = {
+        ["<C-n>"] = actions.cycle_history_next,
+        ["<C-p>"] = actions.cycle_history_prev,
+      },
+    }
 
     return require("astrocore").extend_tbl(opts, {
       pickers = {
@@ -61,13 +69,15 @@ return {
         },
         live_grep = {
           only_sort_text = true,
-          previewer = false,
+          previewer = true,
           file_ignore_patterns = {
             "*.lock",
             "package-lock.json",
             "yarn.lock",
             "pnpm-lock.yaml",
             "pnpm-lock.yml",
+            "Cargo.lock",
+            "*.lock",
           },
         },
       },
@@ -82,11 +92,12 @@ return {
           "*/.next/*",
         },
         history = {
-          path = "~/.local/share/nvim/databases/telescope_history.sqlite3",
+          path = "~/.local/share/nvim/databases/history.sqlite3",
           limit = 1000,
         },
         previewer = false,
         prompt_prefix = " " .. get_icon "Search" .. " ",
+        mappings = mappings,
         layout_config = {
           prompt_position = "top",
         },
@@ -122,5 +133,6 @@ return {
     local telescope = require "telescope"
     telescope.load_extension "zoxide"
     telescope.load_extension "fzf"
+    telescope.load_extension "smart_history"
   end,
 }
