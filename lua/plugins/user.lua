@@ -2,27 +2,25 @@ return {
   "ericpruitt/tmux.vim",
   "rawnly/gist.nvim",
   "DNLHC/glance.nvim",
-  "shortcuts/no-neck-pain.nvim",
+  { "gelguy/wilder.nvim", lazy = false, opts = {
+    modes = { ":", "?", "/" },
+  } },
   {
-    "kelly-lin/ranger.nvim",
-    config = function()
-      require("ranger-nvim").setup { replace_netrw = true }
-      -- vim.api.nvim_set_keymap("n", "<leader>ef", "", {
-      --   noremap = true,
-      --   callback = function() require("ranger-nvim").open(true) end,
-      -- })
-    end,
-  },
-  {
-    "m4xshen/hardtime.nvim",
+    "shortcuts/no-neck-pain.nvim",
     opts = {
-      restricted_keys = {
-        ["j"] = {},
-        ["k"] = {},
-        ["<cr>"] = {},
-      },
+      width = 235,
     },
   },
+  -- {
+  --   "m4xshen/hardtime.nvim",
+  --   opts = {
+  --     restricted_keys = {
+  --       ["j"] = {},
+  --       ["k"] = {},
+  --       ["<cr>"] = {},
+  --     },
+  --   },
+  -- },
   {
     "johmsalas/text-case.nvim",
     dependencies = { "nvim-telescope/telescope.nvim" },
