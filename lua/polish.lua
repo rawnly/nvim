@@ -11,6 +11,7 @@ vim.filetype.add {
   },
   filename = {
     ["tmux.conf"] = "bash",
+    ["envrc"] = "bash",
   },
 }
 
@@ -59,3 +60,13 @@ vim.api.nvim_create_autocmd("User", {
     end
   end,
 })
+
+-- vim.api.nvim_create_autocmd("User", {
+--   pattern = "GitConflictDetected",
+--   callback = function() vim.notify_once "Conflict Detected" end,
+-- })
+
+-- vim.api.nvim_create_autocmd("User", {
+--   pattern = "GitConflictResolved",
+--   callback = function() vim.notify_once("Conflict Resolved", vim.log.levels.INFO) end,
+-- })

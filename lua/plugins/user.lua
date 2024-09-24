@@ -11,6 +11,8 @@ return {
       width = 235,
     },
   },
+
+  { "akinsho/git-conflict.nvim", version = "*", config = true },
   -- {
   --   "m4xshen/hardtime.nvim",
   --   opts = {

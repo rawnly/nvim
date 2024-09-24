@@ -59,10 +59,6 @@ return {
         ["<Leader>o"] = {
           "<cmd>Neotree reveal<CR>",
         },
-        ["<Leader><TAB>"] = {
-          desc = "Ranger",
-          function() require("ranger-nvim").open(true) end,
-        },
 
         -- mappings seen under group name "Buffer"
         ["<Leader>bD"] = {
@@ -86,8 +82,6 @@ return {
         ["<CR>"] = { "ciw" },
         ["<BS>"] = { "cw" },
 
-        ["g"] = { name = "Glance" },
-
         -- Use Glance
         ["gd"] = {
           ":Glance definitions<cr>",
@@ -109,6 +103,11 @@ return {
         ["<Leader>uN"] = {
           "<cmd>lua require('no-neck-pain').toggle()<CR>",
           desc = "Toggle No Neck Pain",
+        },
+
+        ["<Leader>fgc"] = {
+          ":GitConflictListQf<CR>",
+          desc = "Git Conflict List",
         },
       },
       t = {
