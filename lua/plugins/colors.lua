@@ -1,11 +1,52 @@
 return {
-  "nyoom-engineering/oxocarbon.nvim",
-  "RRethy/base16-nvim",
   { "typicode/bg.nvim", lazy = false },
+
+  "nyoom-engineering/oxocarbon.nvim",
+  "hardhackerlabs/theme-vim",
+  "loctvl842/monokai-pro.nvim",
+  "ntk148v/komau.vim",
+  {
+    "kvrohit/rasmus.nvim",
+    config = function()
+      vim.g.rasmus_italic_functions = true
+      -- vim.g.rasmus_variant = "monochrome"
+      vim.g.rasmus_transparent = true
+    end,
+  },
+  {
+    "RRethy/base16-nvim",
+    lazy = true,
+    priority = 1000,
+  },
+
+  { "Everblush/nvim", as = "everblush", lazy = true },
+  {
+    "p00f/alabaster.nvim",
+    lazy = true,
+    priority = 1000,
+  },
+  {
+    "zenbones-theme/zenbones.nvim",
+    -- Optionally install Lush. Allows for more configuration or extending the colorscheme
+    -- If you don't want to install lush, make sure to set g:zenbones_compat = 1
+    -- In Vim, compat mode is turned on as Lush only works in Neovim.
+    dependencies = "rktjmp/lush.nvim",
+    lazy = true,
+    priority = 1000,
+    opts = {},
+  },
+  {
+    "folke/tokyonight.nvim",
+    lazy = false,
+    priority = 1000,
+    opts = {},
+  },
+
   -- { "rose-pine/neovim", name = "rose-pine" },
   {
     "fynnfluegge/monet.nvim",
     name = "monet",
+    lazy = true,
     opts = {
       transparent_background = true,
       dark_mode = true,
@@ -13,7 +54,7 @@ return {
   },
   {
     "rebelot/kanagawa.nvim",
-    lazy = false,
+    lazy = true,
     priority = 1000,
     opts = function()
       local c = require("kanagawa.colors").setup({ theme = "wave" }).palette
