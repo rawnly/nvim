@@ -15,8 +15,6 @@ return {
   { import = "astrocommunity.pack.just" },
   { import = "astrocommunity.pack.svelte" },
   { import = "astrocommunity.pack.bash" },
-  { import = "astrocommunity.pack.zig" },
-  { import = "astrocommunity.pack.ruby" },
   { import = "astrocommunity.pack.toml" },
   { import = "astrocommunity.pack.lua" },
   { import = "astrocommunity.pack.yaml" },

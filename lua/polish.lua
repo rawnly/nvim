@@ -20,6 +20,11 @@ vim.api.nvim_create_user_command("CopyGitUrl", function() utils.copy_git_url() e
   nargs = 0,
 })
 
+vim.api.nvim_create_user_command("CopyContent", utils.copy_content, {
+  desc = "Copy current file content",
+  nargs = 0,
+})
+
 -- Enable spell and wrap for text documents
 vim.api.nvim_create_autocmd("FileType", {
   desc = "Enable wrap and spell for text documents",

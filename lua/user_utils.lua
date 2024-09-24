@@ -1,5 +1,14 @@
 local M = {}
 
+function M.copy_content()
+  local lines = vim.api.nvim_buf_get_lines(0, 0, -1, false)
+  local content = table.concat(lines, "\n")
+
+  vim.fn.setreg("+", content)
+
+  vim.notify_once "File content copied"
+end
+
 function M.copy_git_url()
   local current_file = vim.fn.expand "%:p"
   local current_line = vim.fn.line "."

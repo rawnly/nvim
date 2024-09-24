@@ -9,13 +9,13 @@ return {
   {
     "yugem",
     dir = "~/Developer/nvim-plugins/yugem",
-    lazy = true,
+    lazy = false,
     priority = 1000,
     config = function() require("yugem").setup {} end,
   },
   {
     "zootedb0t/citruszest.nvim",
-    lazy = true,
+    lazy = false,
     priority = 1000,
     opts = {
       option = {
@@ -28,7 +28,7 @@ return {
   {
     "fynnfluegge/monet.nvim",
     name = "monet",
-    lazy = true,
+    lazy = false,
     opts = {
       transparent_background = true,
       dark_mode = true,
@@ -36,7 +36,7 @@ return {
   },
   {
     "rebelot/kanagawa.nvim",
-    lazy = true,
+    lazy = false,
     priority = 1000,
     opts = function()
       local c = require("kanagawa.colors").setup({ theme = "wave" }).palette
