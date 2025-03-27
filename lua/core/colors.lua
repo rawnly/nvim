@@ -1,0 +1,151 @@
+return {
+  { "EdenEast/nightfox.nvim", priority = 1000, opts = {
+    dim_inactive = true,
+  } },
+  {
+    "comfysage/evergarden",
+    opts = {
+      transparent_background = false,
+      variant = "hard",
+    },
+  },
+  { "typicode/bg.nvim", lazy = false },
+  { "kepano/flexoki-neovim", name = "flexoki" },
+  "nyoom-engineering/oxocarbon.nvim",
+  "hardhackerlabs/theme-vim",
+  "loctvl842/monokai-pro.nvim",
+  "ntk148v/komau.vim",
+  { "Everblush/nvim", as = "everblush", lazy = true },
+  {
+    "zenbones-theme/zenbones.nvim",
+    -- Optionally install Lush. Allows for more configuration or extending the colorscheme
+    -- If you don't want to install lush, make sure to set g:zenbones_compat = 1
+    -- In Vim, compat mode is turned on as Lush only works in Neovim.
+    dependencies = "rktjmp/lush.nvim",
+    lazy = true,
+    priority = 1000,
+    config = function()
+      vim.g.kanagawabones = {
+        transparent_background = true,
+        darkness = "stark",
+        darken_comments = 80,
+        lighten_cursor_line = 6,
+      }
+      vim.g.tokyobones = {
+        transparent_background = true,
+        darkness = "stark",
+        darken_comments = 80,
+        lighten_cursor_line = 6,
+      }
+      vim.g.duckbones = {
+        transparent_background = true,
+        darkness = "stark",
+        darken_comments = true,
+        lighten_cursor_line = 6,
+      }
+    end,
+  },
+  {
+    "folke/tokyonight.nvim",
+    lazy = false,
+    priority = 1000,
+    opts = {
+      transparent = true,
+      styles = {
+        comments = { italic = true },
+        functions = { italic = true, bold = true },
+        sidebars = "transparent",
+        floats = "transparent",
+      },
+      dim_inactive = true,
+      lualine_bold = true,
+    },
+  },
+
+  -- { "rose-pine/neovim", name = "rose-pine" },
+  {
+    "fynnfluegge/monet.nvim",
+    name = "monet",
+    lazy = true,
+    opts = {
+      transparent_background = true,
+      dark_mode = true,
+    },
+  },
+  {
+    "rebelot/kanagawa.nvim",
+    lazy = true,
+    priority = 1000,
+    opts = function()
+      local c = require("kanagawa.colors").setup({ theme = "wave" }).palette
+
+      local BG = c.dragonBlack3
+      local ALMOST_BG = c.dragonBlack4
+      local WHITE = "#9da2af"
+      local GRAY = "#80838f"
+      local FADED_GRAY = "#33373a"
+      local STRONG_FADED_GRAY = "#2a2d30"
+
+      return {
+        compile = true,
+        colors = {
+          theme = {
+            all = {
+              ui = {
+                bg_gutter = "none",
+              },
+            },
+          },
+        },
+        overrides = function()
+          local overrides = {
+            -- bufferline
+            BufferLineFill = { bg = BG },
+            BufferLineBackground = { bg = BG, fg = FADED_GRAY }, -- unactive tabs to faded gray
+            BufferLineSeparator = { fg = BG },
+            BufferLineModified = { fg = BG },
+            BufferlineBufferSelected = { fg = GRAY }, -- active tabs to gray
+            BufferlineBufferVisible = { fg = GRAY }, -- active tabs to gray
+            BufferLineIndicatorVisible = { fg = BG },
+
+            -- indentline
+            IndentBlanklineChar = { fg = ALMOST_BG },
+
+            -- GitSigns
+            GitSignsAdd = { fg = c.oniViolet },
+            GitSignsAddNr = { fg = c.oniViolet },
+            GitSignsAddLn = { fg = c.oniViolet },
+            GitSignsChange = { fg = c.oniViolet },
+            GitSignsChangeNr = { fg = c.oniViolet },
+            GitSignsChangeLn = { fg = c.oniViolet },
+            GitSignsCurrentLineBlame = { fg = FADED_GRAY },
+
+            -- NvimTree
+            NvimTreeGitDirty = { fg = c.oniViolet },
+            NvimTreeGitStaged = { fg = c.oniViolet },
+            NvimTreeGitMerge = { fg = c.oniViolet },
+            NvimTreeGitRenamed = { fg = c.oniViolet },
+            NvimTreeGitNew = { fg = c.oniViolet },
+            NvimTreeGitDeleted = { fg = c.oniViolet },
+            NvimTreeFolderName = { fg = WHITE },
+            NvimTreeOpenedFolderName = { fg = WHITE },
+            NvimTreeEmptyFolderName = { fg = WHITE },
+            NvimTreeRootFolder = { fg = GRAY },
+            NvimTreeSpecialFile = { fg = WHITE, bold = true },
+            NvimTreeNormalFloat = { bg = BG },
+            NvimTreeCursorLine = { bg = ALMOST_BG },
+            NvimTreeIndentMarker = { fg = STRONG_FADED_GRAY },
+            NvimTreeImageFile = { fg = WHITE },
+            NvimTreeFolderIcon = { fg = GRAY },
+            NvimTreeFolderIconOpen = { fg = GRAY },
+            NvimTreeFolderSymlink = { fg = GRAY },
+            NvimTreeDefault = { fg = GRAY },
+            NvimTreeSymlink = { fg = GRAY },
+            NvimTreeBookmark = { fg = GRAY },
+          }
+          return overrides
+        end,
+      }
+    end,
+  },
+}
