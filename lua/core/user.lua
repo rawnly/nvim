@@ -1,4 +1,5 @@
 return {
+  "NoahTheDuke/vim-just",
   {
     "echasnovski/mini.starter",
     enabled = true,

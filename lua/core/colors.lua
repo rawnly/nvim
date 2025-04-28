@@ -15,7 +15,20 @@ return {
   "hardhackerlabs/theme-vim",
   "loctvl842/monokai-pro.nvim",
   "ntk148v/komau.vim",
+  { "datsfilipe/vesper.nvim" },
   { "Everblush/nvim", as = "everblush", lazy = true },
+  {
+    "sainnhe/everforest",
+    lazy = false,
+    priority = 1000,
+    config = function()
+      vim.g.everforest_enable_italic = true
+      vim.g.everforest_background = "hard"
+      -- vim.g.everforest_cursor = "yellow"
+      vim.g.everforest_transparent_background = 2
+      vim.g.everforest_ui_contrast = "high"
+    end,
+  },
   {
     "zenbones-theme/zenbones.nvim",
     -- Optionally install Lush. Allows for more configuration or extending the colorscheme
