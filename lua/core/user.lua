@@ -9,7 +9,7 @@ return {
         items = {
           require("mini.starter").sections.builtin_actions(),
           require("mini.starter").sections.recent_files(5, true),
-          require("mini.starter").sections.recent_files(5, false),
+          require("mini.starter").sections.recent_files(5, false, false),
         },
       })
     end,
