@@ -22,6 +22,7 @@ return {
   { import = "astrocommunity.pack.lua" },
   { import = "astrocommunity.pack.yaml" },
   { import = "astrocommunity.pack.json" },
+  -- { import = "astrocommunity.pack.typescript" },
   --
   { import = "astrocommunity.motion.marks-nvim" },
   { import = "astrocommunity.motion.flit-nvim" },

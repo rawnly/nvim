@@ -1,4 +1,15 @@
 return {
+  {
+    "dgox16/oldworld.nvim",
+    lazy = false,
+    priority = 1000,
+    opts = {
+      variant = "cooler",
+      integrations = {
+        neo_tree = true,
+      },
+    },
+  },
   { "EdenEast/nightfox.nvim", priority = 1000, opts = {
     dim_inactive = true,
   } },
