@@ -7,6 +7,7 @@ return {
   "AstroNvim/astrocommunity",
   { import = "astrocommunity.pack.lua" },
   { import = "astrocommunity.recipes.ai" },
+  { import = "astrocommunity.completion.avante-nvim" },
   -- import/override with your plugins folder
   { import = "astrocommunity.pack.fish" },
   { import = "astrocommunity.pack.rust" },
