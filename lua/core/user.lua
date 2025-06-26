@@ -1,12 +1,31 @@
 return {
-  { "yioneko/nvim-vtsls" },
-    {
-    "ray-x/lsp_signature.nvim",
-    event = "BufRead",
-    config = function() require("lsp_signature").setup() end,
+  {
+    "sphamba/smear-cursor.nvim",
+    opts = {
+      smear_insert_mode = false,
+
+      stiffness = 0.5,
+      trailing_stiffness = 0.5,
+      damping = 0.67,
+      matrix_pixel_threshold = 0.5,
+
+      -- stiffness = 0.8, -- 0.6      [0, 1]
+      -- trailing_stiffness = 0.5, -- 0.4      [0, 1]
+      -- stiffness_insert_mode = 0.7, -- 0.5      [0, 1]
+      -- trailing_stiffness_insert_mode = 0.7, -- 0.5      [0, 1]
+      -- damping = 0.8, -- 0.65     [0, 1]
+      -- distance_stop_animating = 0.5, -- 0.1      > 0
+    },
   },
+  { "yioneko/nvim-vtsls" },
+  "b0o/SchemaStore.nvim",
+  -- {
+  --   "ray-x/lsp_signature.nvim",
+  --   event = "BufRead",
+  --   config = function() require("lsp_signature").setup() end,
+  -- },
   { "rafcamlet/nvim-luapad" },
-  "NoahTheDuke/vim-just",
+  "NoahTheDuke/vim-just", -- justfile support
   {
     "echasnovski/mini.starter",
     enabled = true,
