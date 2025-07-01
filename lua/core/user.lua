@@ -18,7 +18,7 @@ return {
     },
   },
   { "yioneko/nvim-vtsls" },
-  "b0o/SchemaStore.nvim",
+  "b0o/schemastore.nvim",
   -- {
   --   "ray-x/lsp_signature.nvim",
   --   event = "BufRead",
