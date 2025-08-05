@@ -1,4 +1,5 @@
 return {
+  "yazeed1s/oh-lucy.nvim",
   {
     "dgox16/oldworld.nvim",
     lazy = false,
