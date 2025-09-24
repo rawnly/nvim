@@ -40,5 +40,5 @@ return {
   { import = "astrocommunity.test.neotest" },
   --
   { import = "astrocommunity.bars-and-lines.dropbar-nvim" },
-  { import = "astrocommunity.bars-and-lines.feline-nvim" },
+  -- { import = "astrocommunity.bars-and-lines.feline-nvim" },
 }
