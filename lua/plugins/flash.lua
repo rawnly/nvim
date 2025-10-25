@@ -1,8 +1,6 @@
 return {
   {
     "folke/flash.nvim",
-    event = "VeryLazy",
-    vscode = true,
     --@type Flash.Config
     opts = {
       label = {
@@ -12,7 +10,7 @@ return {
       },
       modes = {
         char = {
-          enabled = false,
+          enabled = true,
           jump_labels = true,
           autohide = true,
         },
@@ -20,32 +18,6 @@ return {
           enabled = true,
           mode = "fuzzy",
         },
-      },
-    },
-    keys = {
-      {
-        "s",
-        mode = { "n", "x", "o" },
-        function()
-          require("flash").jump {
-            search = {
-              -- mode = function(str) return "\\<" .. str end,
-            },
-          }
-        end,
-        desc = "Flash",
-      },
-      {
-        "S",
-        mode = { "n", "o", "x" },
-        function() require("flash").treesitter() end,
-        desc = "Flash Treesitter",
-      },
-      {
-        "R",
-        mode = { "o", "x" },
-        function() require("flash").remote() end,
-        desc = "Flash Treesitter",
       },
     },
   },

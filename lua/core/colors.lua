@@ -1,4 +1,18 @@
 return {
+  {
+    "tahayvr/matteblack.nvim",
+    lazy = false,
+    priority = 1000,
+  },
+  {
+    "scottmckendry/cyberdream.nvim",
+    lazy = false,
+    priority = 1000,
+    opts = {
+      cache = true,
+      saturation = 0.95,
+    },
+  },
   "hiphish/rainbow-delimiters.nvim",
   {
     "everviolet/nvim",

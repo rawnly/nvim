@@ -7,7 +7,7 @@ return {
   "AstroNvim/astrocommunity",
   { import = "astrocommunity.pack.lua" },
   { import = "astrocommunity.recipes.ai" },
-  { import = "astrocommunity.completion.avante-nvim" },
+  -- { import = "astrocommunity.completion.avante-nvim" },
   -- import/override with your plugins folder
   { import = "astrocommunity.pack.fish" },
   { import = "astrocommunity.pack.rust" },
@@ -26,8 +26,6 @@ return {
   -- { import = "astrocommunity.pack.typescript" },
   --
   { import = "astrocommunity.motion.marks-nvim" },
-  { import = "astrocommunity.motion.flit-nvim" },
-  --
   { import = "astrocommunity.color.modes-nvim" },
   --
   { import = "astrocommunity.syntax.vim-sandwich" },
@@ -40,5 +38,6 @@ return {
   { import = "astrocommunity.test.neotest" },
   --
   { import = "astrocommunity.bars-and-lines.dropbar-nvim" },
+  { import = "astrocommunity.motion.flash-nvim" },
   -- { import = "astrocommunity.bars-and-lines.feline-nvim" },
 }

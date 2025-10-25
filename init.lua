@@ -19,4 +19,4 @@ end
 require "lazy_setup"
 require "polish"
 
-discipline.cowboy()
+-- discipline.cowboy()

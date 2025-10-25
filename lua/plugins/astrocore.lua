@@ -105,6 +105,11 @@ return {
           ":GitConflictListQf<CR>",
           desc = "Git Conflict List",
         },
+
+        ["<Leader>ff"] = {
+          function() require("fff").find_files() end,
+          desc = "FFFind files",
+        },
       },
     },
   },

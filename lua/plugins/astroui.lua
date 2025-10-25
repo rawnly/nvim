@@ -9,7 +9,8 @@ return {
   ---@type AstroUIOpts
   opts = {
     -- change colorscheme
-    colorscheme = "evergarden",
+    -- colorscheme = "evergarden",
+    colorscheme = "cyberdream",
     -- colorscheme = "everforest",
     -- AstroUI allows you to easily modify highlight groups easily for any and all colorschemes
     highlights = {

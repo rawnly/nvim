@@ -1,4 +1,18 @@
 return {
+  {
+    "NeogitOrg/neogit",
+    dependencies = {
+      "nvim-lua/plenary.nvim", -- required
+      "sindrets/diffview.nvim", -- optional - Diff integration
+      "folke/snacks.nvim", -- optional
+    },
+  },
+
+  {
+    "k2589/getgithublink.nvim",
+    config = function() require("getgithublink").setup() end,
+  },
+  "mrjones2014/smart-splits.nvim",
   { "yioneko/nvim-vtsls" },
   "b0o/schemastore.nvim",
   { "rafcamlet/nvim-luapad" },
