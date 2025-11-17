@@ -9,8 +9,9 @@ return {
     lazy = false,
     priority = 1000,
     opts = {
+      transparent = true,
       cache = true,
-      saturation = 0.95,
+      saturation = 0.5,
     },
   },
   "hiphish/rainbow-delimiters.nvim",

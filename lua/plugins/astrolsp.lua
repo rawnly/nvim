@@ -9,6 +9,16 @@ return {
       inlay_hints = false, -- enable/disable inlay hints on start
       semantic_tokens = true, -- enable/disable semantic token highlighting
     },
+    mason_lspconfig = {
+      servers = {
+        tailwindcss = {
+          package = "tailwindcss",
+          filetypes = {
+            "html",
+          },
+        },
+      },
+    },
     -- customize lsp formatting options
     formatting = {
       -- control auto formatting on save
