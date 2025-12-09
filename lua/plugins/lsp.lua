@@ -1,0 +1,78 @@
+---@module "lazy.nvim"
+---@type LazySpec
+return {
+  {
+    "folke/trouble.nvim",
+    -- for default options, refer to the configuration section for custom setup.
+    opts = {},
+    cmd = "Trouble",
+    keys = {
+      {
+        "<leader>xx",
+        "<cmd>Trouble diagnostics toggle<cr>",
+        desc = "Diagnostics (Trouble)",
+      },
+      {
+        "<leader>xX",
+        "<cmd>Trouble diagnostics toggle filter.buf=0<cr>",
+        desc = "Buffer Diagnostics (Trouble)",
+      },
+      {
+        "<leader>cl",
+        "<cmd>Trouble lsp toggle focus=false win.position=right<cr>",
+        desc = "LSP Definitions / references / ... (Trouble)",
+      },
+      {
+        "<leader>xL",
+        "<cmd>Trouble loclist toggle<cr>",
+        desc = "Location List (Trouble)",
+      },
+      {
+        "<leader>xQ",
+        "<cmd>Trouble qflist toggle<cr>",
+        desc = "Quickfix List (Trouble)",
+      },
+    },
+  },
+  {
+    'DNLHC/glance.nvim',
+    cmd = 'Glance',
+    keys = {
+      { "gr", "<CMD>Glance references<CR>",  desc = "Go to references" },
+      { "gd", "<CMD>Glance definitions<CR>", desc = "Go to definitions" }
+    }
+  },
+  {
+    'stevearc/conform.nvim',
+    opts = {
+      format_on_save = function(bufnr)
+        if vim.g.disable_autoformat or vim.b[bufnr].disable_autoformat then
+          return
+        end
+
+        return {
+          timeout_ms = 500, lsp_format = "fallback"
+        }
+      end
+    },
+  },
+  {
+    'stevearc/aerial.nvim',
+    keys = {
+      {
+        "<leader>lS",
+        ":AerialOpen left<CR>",
+        desc = "Show Outline"
+      }
+    },
+    opts = {},
+    dependencies = {
+      "nvim-treesitter/nvim-treesitter",
+    },
+  },
+  {
+    "windwp/nvim-ts-autotag",
+    lazy = false,
+    opts = {}
+  }
+}
