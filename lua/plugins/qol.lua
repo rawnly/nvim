@@ -4,7 +4,12 @@ return {
   "nvim-tree/nvim-web-devicons",
   {
     "folke/lazydev.nvim",
-    opts = {}
+    opts = {
+      library = {
+        { path = "snacks.nvim", words = { "Snacks" } },
+        { path = "lazy.nvim",   words = { "LazyVim", "LazySpec" } },
+      }
+    }
   },
   {
     "mvllow/modes.nvim",

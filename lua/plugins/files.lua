@@ -13,8 +13,7 @@ return {
     build = function()
       require("fff.download").download_or_build_binary()
     end,
-    -- enabled = false,
-    opts = { -- (optional)
+    opts = {
       prompt = "> ",
       icons = { enabled = false },
       layout = {
@@ -23,8 +22,8 @@ return {
         height = 0.9,
       },
       debug = {
-        enabled = false,     -- we expect your collaboration at least during the beta
-        show_scores = false, -- to help us optimize the scoring system, feel free to share your scores!
+        enabled = false,
+        show_scores = false,
       },
       keymaps = {
         move_up = { "<C-k>", "<Up>", "<C-p>" },
@@ -34,12 +33,12 @@ return {
     lazy = false,
     keys = {
       {
-        "<leader>ff", -- try it if you didn't it is a banger keybinding for a picker
+        "<leader>ff",
         function() require("fff").find_files() end,
         desc = "FFFind files",
       },
       {
-        "ff", -- try it if you didn't it is a banger keybinding for a picker
+        "ff",
         function() require("fff").find_files() end,
         desc = "FFFind files",
       },
@@ -52,5 +51,11 @@ return {
     ---@type oil.SetupOpts
     opts = {},
     lazy = false,
+    keys = {
+      {
+        "<leader>e",
+        ":Oil<CR>"
+      }
+    }
   }
 }
