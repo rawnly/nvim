@@ -18,7 +18,7 @@ return {
         desc = "Buffer Diagnostics (Trouble)",
       },
       {
-        "<leader>cl",
+        "<leader>xl",
         "<cmd>Trouble lsp toggle focus=false win.position=right<cr>",
         desc = "LSP Definitions / references / ... (Trouble)",
       },
@@ -74,5 +74,16 @@ return {
     "windwp/nvim-ts-autotag",
     lazy = false,
     opts = {}
+  },
+  {
+    "pmizio/typescript-tools.nvim",
+    dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
+    opts = {},
+  },
+  {
+    "folke/which-key.nvim",
+    keys = {
+      { "<leader>ld", vim.diagnostic.open_float, desc = "Hover Diagnostics" },
+    }
   }
 }

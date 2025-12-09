@@ -25,7 +25,7 @@ return {
     keys = {
       { "<CR>",  "ciw" },
       { "<C-q>", "<CMD>q<CR>" },
-      { "<C-s>", "<CMD>w<CR>" },
+      { "<C-s>", "<cmd>w<cr><esc>", desc = "Save File", mode = { "i", "x", "n", "s" }, },
       {
         "<leader>?",
         function()
