@@ -70,5 +70,20 @@ return {
         },
       }
     end
+  },
+  {
+    "folke/which-key.nvim",
+    keys = {
+      {
+        "<leader>gb",
+        function() Snacks.picker.git_branches() end,
+        desc = "Pick branch"
+      },
+      {
+        "<leader>go",
+        function() Snacks.gitbrowse.open() end,
+        desc = "View on github"
+      },
+    }
   }
 }
