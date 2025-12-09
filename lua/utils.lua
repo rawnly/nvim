@@ -37,4 +37,33 @@ function M.exec(cmd, stdin)
   return output
 end
 
-return M
+--- executes the given command
+---@param cmd string[]
+---@param err string
+function M.system(cmd, err)
+  local proc = vim.fn.system(cmd)
+  if vim.v.shell_error ~= 0 then
+    Snacks.notify.error({ err, proc }, { title = "Failed to execute command" })
+    error("__ignore__")
+  end
+  return vim.split(vim.trim(proc), "\n")
+end
+
+---@param hash string
+---@param cwd string
+---@return boolean
+function M.is_valid_commit_hash(hash, cwd)
+  if not (hash:match("^[a-fA-F0-9]+$") and #hash >= 7) then
+    return false
+  end
+  M.system({ "git", "-C", cwd, "rev-parse", "--verify", hash }, "Invalid commit hash")
+  return true
+end
+
+function M.get_branch()
+  return M.system(
+        { "git", "-C", vim.fn.getcwd(), "rev-parse", "--abbrev-ref", "HEAD" },
+        "Failed to get current branch"
+      )
+      [1]
+end

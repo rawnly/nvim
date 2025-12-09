@@ -9,8 +9,11 @@ return {
       spec = {
         { "<leader>l", group = "LSP" },
         { "<leader>f", group = "File" },
-        { "<leader>h", group = "Git" },
-        { "<leader>x", group = "Trouble", desc = "Trouble" },
+        { "<leader>h", group = "Hunk" },
+        { "<leader>g", group = "Git" },
+        { "<leader>x", group = "Trouble" },
+        { "<leader>s", group = "Search & Replace" },
+        { "<leader>b", group = "Buffers" },
       },
       plugins = {
         presets = {
@@ -24,8 +27,8 @@ return {
     },
     keys = {
       { "<CR>",  "ciw" },
-      { "<C-q>", "<CMD>q<CR>" },
-      { "<C-s>", "<cmd>w<cr><esc>", desc = "Save File", mode = { "i", "x", "n", "s" }, },
+      { "<C-q>", "<CMD>q!<CR><ESC>" },
+      { "<C-s>", "<cmd>w!<cr><esc>", desc = "Save File", mode = { "i", "x", "n", "s" }, },
       {
         "<leader>?",
         function()

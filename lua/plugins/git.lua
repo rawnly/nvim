@@ -59,12 +59,12 @@ return {
           desc = "Reset Buffer"
         },
         {
-          "<leader>hb",
+          "<leader>gb",
           gitsigns.blame_line,
           desc = "Blame Like"
         },
         {
-          "<leader>hB",
+          "<leader>gB",
           gitsigns.blame,
           desc = "Blame"
         },
@@ -75,14 +75,27 @@ return {
     "folke/which-key.nvim",
     keys = {
       {
-        "<leader>gb",
+        "<leader>fb",
         function() Snacks.picker.git_branches() end,
         desc = "Pick branch"
       },
       {
         "<leader>go",
-        function() Snacks.gitbrowse.open() end,
+        function() Snacks.gitbrowse.open({ what = 'permalink', notify = false }) end,
         desc = "View on github"
+      },
+      {
+        "<leader>gc",
+        function()
+          Snacks.gitbrowse.open({
+            what = 'permalink',
+            notify = true,
+            open = function(url)
+              vim.fn.setreg("+", url)
+            end
+          })
+        end,
+        desc = "Copy git permalink"
       },
     }
   }
