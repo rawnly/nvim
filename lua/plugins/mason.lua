@@ -7,6 +7,7 @@ return {
         "gopls",
         "rust_analyzer",
         "tsgo",
+        "zls",
         "biome"
       }
     },
