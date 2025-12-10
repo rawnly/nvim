@@ -12,15 +12,27 @@ local options = {
   number = true,
   termguicolors = true,
   clipboard = 'unnamedplus',
+  -- fold
+  -- foldmethod = "expr",
+  -- foldexpr = "v:lua.vim.treesitter.foldexpr()",
+  -- foldtext = "",
+  -- foldlevel = 99,
+  -- foldlevelstart = 0,
+  -- foldnestmax = 4
 }
 
 for option, value in pairs(options) do
   vim.opt[option] = value
 end
 
--- vim.cmd.syntax "off"
+vim.cmd.syntax "off"
 
 require("config.lazy")
 require("polish")
 
 vim.cmd.colorscheme "tokyonight"
+
+if vim.lsp.inlay_hint then
+  -- Enable inlay hints by default
+  vim.lsp.inlay_hint.enable()
+end

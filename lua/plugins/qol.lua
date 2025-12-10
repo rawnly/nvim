@@ -6,8 +6,10 @@ return {
     "folke/lazydev.nvim",
     opts = {
       library = {
-        { path = "snacks.nvim", words = { "Snacks" } },
-        { path = "lazy.nvim",   words = { "LazyVim", "LazySpec" } },
+        { path = "snacks.nvim",           words = { "Snacks" } },
+        { path = "lazy.nvim",             words = { "LazyVim", "LazySpec" } },
+        { path = "typescript-tools.nvim", words = { "Settings" } }
+
       }
     }
   },

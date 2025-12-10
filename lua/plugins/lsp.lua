@@ -51,9 +51,19 @@ return {
         end
 
         return {
-          timeout_ms = 500, lsp_format = "fallback"
+          timeout_ms = 500,
+          lsp_format = "fallback"
         }
-      end
+      end,
+      formatters_by_ft = {
+        lua = { "stylua" },
+        javascript = { "biome", "biome-organize-imports" },
+        javascriptreact = { "biome", "biome-organize-imports" },
+        typescript = { "biome", "biome-organize-imports" },
+        typescriptreact = { "biome", "biome-organize-imports" },
+        go = { "goimports", "gofmt" },
+        rust = { "rustfmt" }
+      }
     },
   },
   {
@@ -78,12 +88,28 @@ return {
   {
     "pmizio/typescript-tools.nvim",
     dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
-    opts = {},
+    opts = {
+      ---@module "typescript-tools.nvim"
+      ---@class Settings
+      settings = {
+        tsserver_file_preferences = {
+          includeInlayParameterNameHints = 'all',
+        },
+      }
+    },
   },
   {
     "folke/which-key.nvim",
     keys = {
       { "<leader>ld", vim.diagnostic.open_float, desc = "Hover Diagnostics" },
+      { "<leader>li", ":LspInfo<CR><esc>",       desc = "Info" },
+      {
+        "<leader>lh",
+        function()
+          vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({ 0 }), { 0 })
+        end,
+        desc = "Info"
+      },
     }
   }
 }
