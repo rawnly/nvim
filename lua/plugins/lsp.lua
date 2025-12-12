@@ -37,6 +37,21 @@ return {
   {
     'DNLHC/glance.nvim',
     cmd = 'Glance',
+    opts = {
+      border = {
+        enable = true
+      },
+      hooks = {
+        -- jump to definition if the result is just 1
+        before_open = function(results, open, jump)
+          if #results == 1 then
+            jump(results[1])
+          else
+            open(results)
+          end
+        end
+      }
+    },
     keys = {
       { "gr", "<CMD>Glance references<CR>",  desc = "Go to references" },
       { "gd", "<CMD>Glance definitions<CR>", desc = "Go to definitions" }

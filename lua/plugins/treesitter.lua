@@ -26,6 +26,9 @@ return {
       },
     },
     config = function(_, opts)
+      -- vim.wo.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
+      -- vim.wo.foldmethod = 'expr'
+      -- vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
       -- vim.cmd.syntax "off"
       vim.api.nvim_create_autocmd("BufReadPost", {
         pattern = "*",
