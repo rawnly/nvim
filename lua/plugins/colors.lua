@@ -13,7 +13,17 @@ return {
     'folke/tokyonight.nvim',
     lazy = true,
     priority = 1000,
-    opts = { style = 'night' }, -- Or 'day'/'moon'
+    opts = {
+      style = 'night',
+      transparent = true,
+      styles = {
+        keywords = {
+          italic = true,
+          bold = true
+        }
+      },
+      dim_inactive = true
+    }, -- Or 'day'/'moon'
   },
   {
     "folke/which-key.nvim",

@@ -49,6 +49,11 @@ return {
           desc = "Reset Hunk"
         },
         {
+          "<leader>hp",
+          gitsigns.preview_hunk_inline,
+          desc = "Preview hunk"
+        },
+        {
           "<leader>hS",
           gitsigns.stage_buffer,
           desc = "Stage Buffer"
