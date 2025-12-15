@@ -20,6 +20,11 @@ return {
     version = '*',
     opts = {}
   },
+  {
+    'nvim-mini/mini.starter',
+    version = '*',
+    opts = {}
+  },
   -- {
   --   'nvim-mini/mini.pick',
   --   version = '*',
