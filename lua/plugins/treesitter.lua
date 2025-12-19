@@ -18,6 +18,9 @@ return {
         "fish",
         "fish",
         "zig",
+        "tsx",
+        "yaml",
+        "toml",
         "css",
         "html",
         "markdown",
@@ -38,6 +41,8 @@ return {
       })
 
       require("nvim-treesitter.install").prefer_git = true
+
+      return opts
     end
   }
 }
