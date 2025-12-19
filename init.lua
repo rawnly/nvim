@@ -25,7 +25,7 @@ for option, value in pairs(options) do
   vim.opt[option] = value
 end
 
-vim.cmd.syntax "off"
+-- vim.cmd.syntax "off"
 
 require("config.lazy")
 require("polish")
