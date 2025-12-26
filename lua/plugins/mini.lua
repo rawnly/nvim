@@ -1,5 +1,4 @@
 return {
-  -- { 'nvim-mini/mini.icons', version = '*' },
   {
     'nvim-mini/mini.basics',
     version = '*',

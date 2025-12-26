@@ -49,7 +49,7 @@ return {
   },
   {
     'stevearc/oil.nvim',
-    dependencies = { { "nvim-mini/mini.icons", opts = {} } },
+    dependencies = 'nvim-tree/nvim-web-devicons',
     ---@module 'oil'
     ---@type oil.SetupOpts
     opts = {},
@@ -57,7 +57,7 @@ return {
     keys = {
       {
         "<leader>e",
-        ":Oil<CR>"
+        ":Oil --float<CR>"
       }
     }
   }
