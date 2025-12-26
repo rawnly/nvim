@@ -83,6 +83,7 @@ return {
   },
   {
     'mrcjkb/rustaceanvim',
+    ft = "rust",
     version = '^6', -- Recommended
     lazy = false,   -- This plugin is already lazy
   },
@@ -108,6 +109,7 @@ return {
   {
     "pmizio/typescript-tools.nvim",
     dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
+    ft = { "javascript", "typescript", "typescriptreact", "javascriptreact" },
     opts = {
       ---@module "typescript-tools.nvim"
       ---@class Settings
@@ -137,4 +139,16 @@ return {
     event = "LspAttach",
     opts = {}, -- required, even if empty
   },
+  {
+    "olexsmir/gopher.nvim",
+    ft = "go",
+    -- branch = "develop"
+    -- (optional) updates the plugin's dependencies on each update
+    build = function()
+      vim.cmd.GoInstallDeps()
+    end,
+    ---@module "gopher"
+    ---@type gopher.Config
+    opts = {},
+  }
 }
