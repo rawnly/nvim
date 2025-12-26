@@ -17,7 +17,7 @@ return {
       { "<S-l>",      "<CMD>BufferLineCycleNext<CR>",    desc = "Next Buffer" },
       { "<leader>c",  function() Snacks.bufdelete() end, desc = "Delete Buffer" },
       { "<leader>bp", "<CMD>BufferLineTogglePin<CR>",    desc = "Pin Buffer" },
-      { "<leader>bC", "<CMD>BufferLineCloseOthers<CR>",  desc = "Delete Other Buffers" }
+      { "<leader>bc", "<CMD>BufferLineCloseOthers<CR>",  desc = "Delete Other Buffers" }
     }
   },
   {
