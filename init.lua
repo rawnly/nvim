@@ -30,7 +30,7 @@ end
 require("config.lazy")
 require("polish")
 
-vim.cmd.colorscheme "tokyonight"
+vim.cmd.colorscheme "teide-darker"
 
 if vim.lsp.inlay_hint then
   -- Enable inlay hints by default

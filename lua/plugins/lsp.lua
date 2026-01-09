@@ -150,5 +150,9 @@ return {
     ---@module "gopher"
     ---@type gopher.Config
     opts = {},
+  },
+  {
+    "enochchau/nvim-pretty-ts-errors",
+    build = "npm install",
   }
 }

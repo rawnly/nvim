@@ -1,21 +1,39 @@
+---@type LazySpec
 return {
   {
     "scottmckendry/cyberdream.nvim",
     lazy = false,
     priority = 1000,
+    enabled = false,
     opts = {
-      transparent = true,
+      transparent = false,
       cache = true,
       saturation = 0.5
     }
   },
   {
+    "serhez/teide.nvim",
+    lazy = false,
+    priority = 1000,
+    opts = {
+      transparent = false,
+      styles = {
+        keywords = {
+          italic = true,
+          bold = true
+        }
+      },
+      dim_inactive = true
+    },
+  },
+  {
     'folke/tokyonight.nvim',
     lazy = true,
     priority = 1000,
+    enabled = false,
     opts = {
       style = 'night',
-      transparent = true,
+      transparent = false,
       styles = {
         keywords = {
           italic = true,
