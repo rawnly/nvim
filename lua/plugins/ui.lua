@@ -1,9 +1,21 @@
 ---@type LazySpec
 return {
   {
+    "serhez/bento.nvim",
+    opts = {
+      ui = {
+        mode = "floating",
+        floating = {
+          minimal_menu = 'full'
+        }
+      }
+    }
+  },
+  {
     'akinsho/bufferline.nvim',
     version = "*",
     event = "VeryLazy",
+    enabled = false,
     dependencies = 'nvim-tree/nvim-web-devicons',
     opts = {
       options = {
