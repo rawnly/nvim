@@ -24,6 +24,7 @@ return {
         "css",
         "html",
         "markdown",
+        "markdown_inline",
         "typescript",
         "javascript",
       },
