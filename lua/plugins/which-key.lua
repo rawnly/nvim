@@ -26,7 +26,7 @@ return {
       }
     },
     keys = {
-      { "<CR>",  "ciw" },
+      { "<CR>",  "ciw", cond = function() return vim.bo.modifiable end },
       { "<C-q>", "<CMD>q!<CR><ESC>" },
       { "<C-s>", "<cmd>w!<cr><esc>", desc = "Save File", mode = { "i", "x", "n", "s" }, },
       {
