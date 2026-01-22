@@ -76,6 +76,14 @@ return {
     event = "VeryLazy",
     opts = function()
       return {
+        extensions = {
+          "quickfix",
+          "fzf",
+          "lazy",
+          "oil",
+          "trouble",
+          "toggleterm"
+        },
         options = {
           theme = "auto",
           globalstatus = vim.o.laststatus == 3,
@@ -86,35 +94,19 @@ return {
           }
         },
         sections = {
-          lualine_a = { "mode" },
+          lualine_a = { "mode", },
           lualine_b = { "branch" },
 
           lualine_c = {
-            "diagnostics",
-            { "filetype", icon_only = true, separator = "", padding = { left = 1, right = 0 } }
+            "filename",
           },
 
           lualine_x = {
-            Snacks.profiler.status(),
-            {
-              "diff",
-              source = function()
-                local gitsigns = vim.b.gitsigns_status_dict
-                if gitsigns then
-                  return {
-                    added = gitsigns.added,
-                    modified = gitsigns.changed,
-                    removed = gitsigns.removed,
-                  }
-                end
-              end,
-            },
+            "diagnostics",
+            "oil"
           },
 
-          lualine_y = {
-            { "progress", separator = " ",                  padding = { left = 1, right = 0 } },
-            { "location", padding = { left = 0, right = 1 } },
-          },
+          lualine_y = { "lsp_status" },
 
           lualine_z = {
             function()

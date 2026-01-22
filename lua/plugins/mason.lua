@@ -1,5 +1,14 @@
 return {
   {
+    "mfussenegger/nvim-lint",
+    optional = true,
+    opts = {
+      linters_by_ft = {
+        ["dockerfile"] = { "hadolint" },
+      },
+    },
+  },
+  {
     "mason-org/mason-lspconfig.nvim",
     opts = {
       ensure_installed = {
@@ -9,7 +18,9 @@ return {
         "biome",
         "jsonls",
         "yamlls",
+        -- "docker-langauge-server",
         "docker_compose_language_service",
+        -- "hadolint",
         "ruff",
         "pyright"
       },

@@ -2,54 +2,54 @@ return {
   {
     "mrjones2014/smart-splits.nvim",
     keys = {
-      { "|", ":vsplit<CR>"},
+      { "|", ":vsplit<CR>" },
       -- reisze splits
       {
         "<A-h>",
-        function ()
+        function()
           require("smart-splits").resize_left()
         end
       },
       {
-        "<A-j>",
-        function ()
+        "<A-k>",
+        function()
           require("smart-splits").resize_up()
         end
       },
       {
-        "<A-k>",
-        function ()
+        "<A-j>",
+        function()
           require("smart-splits").resize_down()
         end
       },
       {
         "<A-l>",
-        function ()
+        function()
           require("smart-splits").resize_right()
         end
       },
       -- moving between splits
       {
         "<C-h>",
-        function ()
+        function()
           require("smart-splits").move_cursor_left()
         end
       },
       {
         "<C-j>",
-        function ()
+        function()
           require("smart-splits").move_cursor_up()
         end
       },
       {
         "<C-k>",
-        function ()
+        function()
           require("smart-splits").move_cursor_down()
         end
       },
       {
         "<C-l>",
-        function ()
+        function()
           require("smart-splits").move_cursor_right()
         end
       },

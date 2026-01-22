@@ -9,13 +9,12 @@ return {
         { path = "snacks.nvim",           words = { "Snacks" } },
         { path = "lazy.nvim",             words = { "LazyVim", "LazySpec" } },
         { path = "typescript-tools.nvim", words = { "Settings" } }
-
       }
     }
   },
   {
     "mvllow/modes.nvim",
-    tag = "v0.2.1",
+    opts = {}
   },
   {
     "gelguy/wilder.nvim",
@@ -31,11 +30,15 @@ return {
   {
     'kevinhwang91/nvim-ufo',
     dependencies = { 'kevinhwang91/promise-async' },
-    keys = function(ufo)
-      return {
-        { "zR", ufo.openAllFolds },
-        { "zM", ufo.closeAllFolds }
-      }
-    end
+    opts = {
+      provider_selector = function()
+        return { 'treesitter', 'indent' }
+      end
+    },
+    keys = {
+      { "zR", function() require("ufo").openAllFolds() end,  desc = "open all folds" },
+      { "zM", function() require("ufo").closeAllFolds() end, desc = "close all folds" },
+    }
+
   }
 }

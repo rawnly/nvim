@@ -12,13 +12,14 @@ local options = {
   number = true,
   termguicolors = true,
   clipboard = 'unnamedplus',
-  -- fold
-  -- foldmethod = "expr",
-  -- foldexpr = "v:lua.vim.treesitter.foldexpr()",
-  -- foldtext = "",
-  -- foldlevel = 99,
-  -- foldlevelstart = 0,
-  -- foldnestmax = 4
+  foldmethod = "expr",
+  foldexpr = "v:lua.vim.treesitter.foldexpr()",
+  foldcolumn = "0",
+  foldtext = "",
+  foldlevel = 99,
+  foldlevelstart = 99,
+  foldnestmax = 4,
+  guifont = "Berkeley Mono Variable"
 }
 
 for option, value in pairs(options) do
