@@ -123,14 +123,17 @@ return {
   {
     "folke/which-key.nvim",
     keys = {
-      { "<leader>ld", vim.diagnostic.open_float, desc = "Hover Diagnostics" },
-      { "<leader>li", ":LspInfo<CR><esc>",       desc = "Info" },
+      { "<leader>lr", vim.lsp.buf.rename,                 desc = "Rename" },
+      { "<leader>la", vim.lsp.buf.code_action,            desc = "Code Actions" },
+      { "<leader>ll", vim.lsp.buf.list_workspace_folders, desc = "List workspace folders" },
+      { "<leader>ld", vim.diagnostic.open_float,          desc = "Hover Diagnostics" },
+      { "<leader>li", ":LspInfo<CR><esc>",                desc = "Info" },
       {
         "<leader>lh",
         function()
           vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({ 0 }), { 0 })
         end,
-        desc = "Info"
+        desc = "Toggle inlay hints"
       },
     }
   },

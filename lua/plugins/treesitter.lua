@@ -16,7 +16,6 @@ return {
         "astro",
         "bash",
         "fish",
-        "fish",
         "zig",
         "tsx",
         "caddy",
@@ -32,20 +31,8 @@ return {
       },
     },
     config = function(_, opts)
-      -- vim.wo.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
-      -- vim.wo.foldmethod = 'expr'
-      -- vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
-      -- vim.cmd.syntax "off"
-      vim.api.nvim_create_autocmd("BufReadPost", {
-        pattern = "*",
-        callback = function()
-          vim.treesitter.start()
-        end
-      })
-
       require("nvim-treesitter.install").prefer_git = true
-
-      return opts
+      require("nvim-treesitter.configs").setup(opts)
     end
   }
 }

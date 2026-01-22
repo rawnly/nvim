@@ -7,6 +7,7 @@ return {
       preset = "helix",
       delay = 0,
       spec = {
+        { "<leader>w", proxy = "<c-w>",           group = "windows" },
         { "<leader>l", group = "LSP" },
         { "<leader>f", group = "File" },
         { "<leader>h", group = "Hunk" },
@@ -26,9 +27,6 @@ return {
       }
     },
     keys = {
-      { "<CR>",  "ciw", cond = function() return vim.bo.modifiable end },
-      { "<C-q>", "<CMD>q!<CR><ESC>" },
-      { "<C-s>", "<cmd>w!<cr><esc>", desc = "Save File", mode = { "i", "x", "n", "s" }, },
       {
         "<leader>?",
         function()
@@ -36,8 +34,21 @@ return {
         end,
         desc = "Buffer Local Keymaps (which-key)",
       },
-      { "<leader>lr", vim.lsp.buf.rename,      desc = "Rename" },
-      { "<leader>la", vim.lsp.buf.code_action, desc = "Code Actions" },
+      { "<C-q>", "<CMD>q!<CR><ESC>" },
+      { "<C-s>", "<cmd>w!<cr><esc>", desc = "Save File", mode = { "i", "x", "n", "s" }, },
+      {
+        "<cr>",
+        function()
+          if vim.bo.modifiable then
+            return "ciw"
+          else
+            return "<cr>"
+          end
+        end,
+        desc = "Clear cursor word",
+        mode = "n",
+        expr = true,
+      },
     },
   }
 }

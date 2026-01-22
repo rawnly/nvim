@@ -1,7 +1,20 @@
 ---@type LazySpec
 return {
   {
+    "kevinhwang91/nvim-bqf",
+    ft = "qf",
+    dependencies = {
+      {
+        'junegunn/fzf',
+        opts = {
+          extra_opts = { '--bind', 'ctrl-f:preview-half-page-down,ctrl-b:preview-half-page-up' }
+        }
+      }
+    }
+  },
+  {
     "serhez/bento.nvim",
+    enabled = false,
     opts = {
       ui = {
         mode = "floating",
@@ -15,7 +28,7 @@ return {
     'akinsho/bufferline.nvim',
     version = "*",
     event = "VeryLazy",
-    enabled = false,
+    enabled = true,
     dependencies = 'nvim-tree/nvim-web-devicons',
     opts = {
       options = {
