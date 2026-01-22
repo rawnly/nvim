@@ -1,6 +1,12 @@
 ---@type LazySpec
 return {
   {
+    "rawnly/gist.nvim",
+    opts = {
+      platform = "termbin"
+    }
+  },
+  {
     "NeogitOrg/neogit",
     dependencies = {
       "nvim-lua/plenary.nvim",
