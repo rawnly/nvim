@@ -19,6 +19,8 @@ return {
         "fish",
         "zig",
         "tsx",
+        "caddy",
+        "nginx",
         "yaml",
         "toml",
         "css",
