@@ -8,6 +8,7 @@ return {
     opts   = {
       sync_install = true,
       auto_install = true,
+      highlight = { enable = true },
       ensure_installed = {
         "lua",
         "vim",

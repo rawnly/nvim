@@ -1,6 +1,14 @@
 ---@type LazySpec
 return {
   {
+    "nvzone/showkeys",
+    cmd = "ShowkeysToggle",
+    opts = {
+      excluded_modes = { "i" },
+      position = "top-right"
+    }
+  },
+  {
     "kevinhwang91/nvim-bqf",
     ft = "qf",
     dependencies = {
