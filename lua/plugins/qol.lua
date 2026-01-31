@@ -4,6 +4,7 @@ return {
   "nvim-tree/nvim-web-devicons",
   {
     "folke/lazydev.nvim",
+    ft = "lua",
     opts = {
       library = {
         { path = "snacks.nvim",           words = { "Snacks" } },
