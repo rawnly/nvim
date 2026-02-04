@@ -1,8 +1,7 @@
 -- Make sure to setup `mapleader` and `maplocalleader` before
 -- loading lazy.nvim so that mappings are correct.
 -- This is also a good place to setup other settings (vim.opt)
-vim.g.mapleader = " "
-vim.g.maplocalleader = "\\"
+local mappings = require("mappings")
 
 local options = {
 	tabstop = 2,
@@ -26,12 +25,12 @@ for option, value in pairs(options) do
 	vim.opt[option] = value
 end
 
--- vim.cmd.syntax "off"
+mappings.init()
 
 require("config.lazy")
 require("polish")
 
-vim.cmd.colorscheme("teide-darker")
+vim.cmd.colorscheme("nyx")
 
 if vim.lsp.inlay_hint then
 	-- Enable inlay hints by default
