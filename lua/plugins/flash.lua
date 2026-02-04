@@ -9,6 +9,16 @@ return {
 					jump_labels = true,
 				},
 			},
+			jump = {
+				autojump = true,
+			},
+			label = {
+				style = "overlay",
+				rainbow = {
+					enabled = true,
+					shade = 4,
+				},
+			},
 		},
 		keys = {
 			{
