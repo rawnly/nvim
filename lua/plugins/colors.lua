@@ -20,6 +20,11 @@ return {
 				},
 			},
 			dim_inactive = true,
+			sidebars = {
+				"qf",
+				"help",
+			},
+			plugins = { auto = true },
 		},
 	},
 	{
