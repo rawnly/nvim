@@ -69,15 +69,57 @@ return {
 				desc = "Show Outline",
 			},
 		},
-		opts = {
-			outline_window = {
-				position = "left",
-				auto_jump = true,
-			},
-			preview_window = {
-				-- auto_preview = true,
-			},
-		},
+		config = function()
+			local icons = require("icons")
+
+			require("outline").setup({
+				outline_window = {
+					wrap = false,
+					position = "right",
+					auto_jump = true,
+				},
+				preview_window = {
+					border = "solid",
+					winblend = 2,
+				},
+				symbols = {
+					icons = {
+						File = { icon = icons.lsp.File, hl = "Identifier" },
+						Module = { icon = icons.lsp.Module, hl = "Include" },
+						Namespace = { icon = icons.lsp.Namespace, hl = "Include" },
+						Package = { icon = icons.lsp.Package, hl = "Include" },
+						Class = { icon = icons.lsp.Class, hl = "Type" },
+						Method = { icon = icons.lsp.Method, hl = "Function" },
+						Property = { icon = icons.lsp.Property, hl = "Identifier" },
+						Field = { icon = icons.lsp.Field, hl = "Identifier" },
+						Constructor = { icon = icons.lsp.Constructor, hl = "Special" },
+						Enum = { icon = icons.lsp.Enum, hl = "Type" },
+						Interface = { icon = icons.lsp.Interface, hl = "Type" },
+						Function = { icon = icons.lsp.Function, hl = "Function" },
+						Variable = { icon = icons.lsp.Variable, hl = "Constant" },
+						Constant = { icon = icons.lsp.Constant, hl = "Constant" },
+						String = { icon = icons.lsp.String, hl = "String" },
+						Number = { icon = icons.lsp.Number, hl = "Number" },
+						Boolean = { icon = icons.lsp.Boolean, hl = "Boolean" },
+						Array = { icon = icons.lsp.Array, hl = "Constant" },
+						Object = { icon = icons.lsp.Object, hl = "Type" },
+						Key = { icon = icons.lsp.Keyword, hl = "Type" },
+						Null = { icon = icons.lsp.Null, hl = "Type" },
+						EnumMember = { icon = icons.lsp.EnumMember, hl = "Identifier" },
+						Struct = { icon = icons.lsp.Struct, hl = "Structure" },
+						Event = { icon = icons.lsp.Event, hl = "Type" },
+						Operator = { icon = icons.lsp.Operator, hl = "Identifier" },
+						TypeParameter = { icon = icons.lsp.TypeParameter, hl = "Identifier" },
+						Component = { icon = icons.lsp.Component, hl = "Function" },
+						Fragment = { icon = icons.lsp.Fragment, hl = "Constant" },
+						TypeAlias = { icon = icons.lsp.TypeParameter, hl = "Type" },
+						Parameter = { icon = icons.lsp.Field, hl = "Identifier" },
+						StaticMethod = { icon = icons.lsp.Method, hl = "Function" },
+						Macro = { icon = icons.lsp.Text, hl = "Function" },
+					},
+				},
+			})
+		end,
 	},
 	{
 		"folke/which-key.nvim",
