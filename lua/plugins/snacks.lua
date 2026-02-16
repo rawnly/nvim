@@ -110,7 +110,6 @@ return {
     }
   },
   keys = {
-    { "<leader>fw", function() Snacks.picker.grep() end,      desc = "Search Grep" },
     { "<leader>fc", function() Snacks.picker.grep_word() end, desc = "Search current word" },
     { "<leader>fr", function() Snacks.picker.recent() end,    desc = "Recent" },
     { "<leader>.",  function() Snacks.scratch() end,          desc = "Scratch" },
