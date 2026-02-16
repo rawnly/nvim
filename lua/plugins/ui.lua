@@ -79,7 +79,7 @@ return {
 					"toggleterm",
 				},
 				options = {
-					theme = "auto",
+					theme = "nyx",
 					globalstatus = vim.o.laststatus == 3,
 					disabled_filetypes = {
 						statusline = {
@@ -88,11 +88,11 @@ return {
 					},
 				},
 				sections = {
-					lualine_a = { "mode" },
-					lualine_b = { "branch" },
+					lualine_a = { "branch" },
+					lualine_b = { "filename" },
 
 					lualine_c = {
-						"filename",
+						-- "filename",
 					},
 
 					lualine_x = {
@@ -102,11 +102,7 @@ return {
 
 					lualine_y = { "lsp_status" },
 
-					lualine_z = {
-						function()
-							return " " .. os.date("%R")
-						end,
-					},
+					lualine_z = {},
 				},
 			}
 		end,
