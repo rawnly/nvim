@@ -15,7 +15,7 @@ return {
   },
   -- nightfox
   {
-    "git@rawnly.github.com:rawnly/nyx.nvim",
+    "rawnly/nyx.nvim",
     lazy = false,
     priority = 1000,
     opts = {
