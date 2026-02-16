@@ -1,5 +1,3 @@
-function s(a, b) end
-
 ---@type LazySpec
 return {
   "nvim-treesitter/nvim-treesitter-textobjects",
