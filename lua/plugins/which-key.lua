@@ -15,6 +15,7 @@ return {
         { "<leader>x", group = "Trouble" },
         { "<leader>s", group = "Search & Replace" },
         { "<leader>b", group = "Buffers" },
+        { "<leader>t", group = "TargetProcess" },
       },
       plugins = {
         presets = {
