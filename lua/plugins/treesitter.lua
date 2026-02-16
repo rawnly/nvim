@@ -10,6 +10,8 @@ return {
 			auto_install = true,
 			highlight = { enable = true },
 			ensure_installed = {
+				"java",
+				"kotlin",
 				"lua",
 				"vim",
 				"rust",

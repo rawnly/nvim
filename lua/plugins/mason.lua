@@ -19,10 +19,9 @@ return {
 				"jsonls",
 				"yamlls",
 				"docker_compose_language_service",
+				"jdtls",
 				"ruff",
 				"pyright",
-				-- "docker-langauge-server",
-				-- "hadolint",
 			},
 			handlers = {
 				function(server_name)
