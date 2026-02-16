@@ -30,6 +30,7 @@ require("lazy").setup({
   -- automatically check for plugin updates
   checker = { enabled = true },
   dev = {
+    fallback = true,
     path = "~/Developer/nvim-plugins/rawnly",
   }
 })
