@@ -113,6 +113,5 @@ return {
     { "<leader>fc", function() Snacks.picker.grep_word() end, desc = "Search current word" },
     { "<leader>fr", function() Snacks.picker.recent() end,    desc = "Recent" },
     { "<leader>.",  function() Snacks.scratch() end,          desc = "Scratch" },
-    { "<C-'>",      function() Snacks.terminal() end,         desc = "Toggle Terminal" },
   }
 }
