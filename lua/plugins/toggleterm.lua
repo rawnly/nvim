@@ -4,6 +4,14 @@ local lazygit
 ---@type Terminal
 local devserver
 
+local function close_on_q(bufnr)
+  vim.cmd("startinsert!")
+  vim.api.nvim_buf_set_keymap(bufnr, 'n', 'q', '<cmd>close<cr>', {
+    noremap = true,
+    silent = true
+  })
+end
+
 local function get_lazygit()
   if not lazygit then
     local Terminal = require('toggleterm.terminal').Terminal
@@ -12,15 +20,12 @@ local function get_lazygit()
       hidden = true,
       direction = 'float',
       dir = "git_dir",
+      display_name = "Lazygit",
       float_opts = {
         border = "double"
       },
       on_open = function(t)
-        vim.cmd("startinsert!")
-        vim.api.nvim_buf_set_keymap(t.bufnr, 'n', 'q', '<cmd>close<cr>', {
-          noremap = true,
-          silent = true
-        })
+        close_on_q(t.bufnr)
       end,
     })
   end
@@ -37,6 +42,13 @@ local function get_dev_server()
       close_on_exit = true,
       auto_scroll = true,
       direction = 'float',
+      float_opts = {
+        border = "double",
+
+      },
+      on_open = function(t)
+        close_on_q(t.bufnr)
+      end,
     })
   end
 
@@ -63,18 +75,18 @@ return {
     },
     keys = {
       {
-        "<leader>gt",
+        "<leader>rl",
         function()
           get_lazygit():toggle()
         end,
-        desc = "Lazygit"
+        desc = "lazygit"
       },
       {
         "<leader>rd",
         function()
           get_dev_server():toggle()
         end,
-        desc = "Toggle dev server"
+        desc = "pnpm dev"
       }
     }
   }
