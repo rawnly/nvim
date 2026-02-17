@@ -70,13 +70,19 @@ return {
 		event = "VeryLazy",
 		opts = function()
 			return {
+				disabled_filetypes = {
+					statusline = {},
+					winbar = {},
+				},
 				extensions = {
+					"nvim-dap-ui",
 					"quickfix",
 					"fzf",
 					"lazy",
 					"oil",
 					"trouble",
 					"toggleterm",
+					"mason",
 				},
 				options = {
 					theme = "nyx",

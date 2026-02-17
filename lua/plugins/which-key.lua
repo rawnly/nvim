@@ -1,3 +1,5 @@
+local icons = require("icons")
+
 return {
 	{
 		"folke/which-key.nvim",
@@ -8,15 +10,16 @@ return {
 			delay = 0,
 			spec = {
 				{ "<leader>w", proxy = "<c-w>", group = "windows" },
-				{ "<leader>l", group = "LSP" },
-				{ "<leader>f", group = "File" },
-				{ "<leader>h", group = "Hunk" },
-				{ "<leader>g", group = "Git" },
-				{ "<leader>d", group = "DAP" },
+				{ "<leader>l", icon = icons.lsp.Event, group = "LSP" },
+				{ "<leader>f", icon = icons.file.files, group = "Pickers" },
+				{ "<leader>h", icon = icons.git.commit, group = "Hunk" },
+				{ "<leader>g", icon = icons.git.github, group = "Git" },
+				{ "<leader>n", icon = icons.braces, group = "Test" },
+				{ "<leader>d", icon = icons.dap.breakpoint, group = "DAP" },
 				{ "<leader>x", group = "Trouble" },
-				{ "<leader>s", group = "Search & Replace" },
+				{ "<leader>s", icon = icons.globe, group = "Search & Replace" },
 				{ "<leader>b", group = "Buffers" },
-				{ "<leader>t", group = "TargetProcess" },
+				{ "<leader>t", icon = icons.prism, group = "TargetProcess" },
 			},
 			plugins = {
 				presets = {

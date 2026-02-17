@@ -125,10 +125,15 @@ return {
 		"folke/which-key.nvim",
 		keys = {
 			{ "<leader>lr", vim.lsp.buf.rename, desc = "Rename" },
+			{
+				"<leader>lf",
+				function()
+					vim.lsp.buf.format({ async = true })
+				end,
+				desc = "Rename",
+			},
 			{ "<leader>la", vim.lsp.buf.code_action, desc = "Code Actions" },
-			{ "<leader>ll", vim.lsp.buf.list_workspace_folders, desc = "List workspace folders" },
 			{ "<leader>ld", vim.diagnostic.open_float, desc = "Hover Diagnostics" },
-			{ "<leader>li", ":LspInfo<CR><esc>", desc = "Info" },
 			{
 				"<leader>lh",
 				function()

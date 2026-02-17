@@ -18,18 +18,18 @@ return {
 			return {
 				-- hunk
 				{
-					"<leader>hs",
+					"<leader>gsh",
 					gitsigns.stage_hunk,
 					desc = "Stage Hunk",
 				},
 				{
-					"<leader>hr",
+					"<leader>grh",
 					gitsigns.reset_hunk,
 					desc = "Reset Hunk",
 				},
 				{
 					mode = "v",
-					"<leader>hs",
+					"<leader>gsh",
 					function()
 						gitsigns.stage_hunk({
 							vim.fn.line("."),
@@ -40,7 +40,7 @@ return {
 				},
 				{
 					mode = "v",
-					"<leader>hr",
+					"<leader>grh",
 					function()
 						gitsigns.reset_hunk({
 							vim.fn.line("."),
@@ -50,63 +50,31 @@ return {
 					desc = "Reset Hunk",
 				},
 				{
-					"<leader>hp",
+					"<leader>gph",
 					gitsigns.preview_hunk_inline,
 					desc = "Preview hunk",
 				},
 				{
-					"<leader>hS",
+					"<leader>gsb",
 					gitsigns.stage_buffer,
 					desc = "Stage Buffer",
 				},
 				{
-					"<leader>hR",
+					"<leader>grb",
 					gitsigns.reset_buffer,
 					desc = "Reset Buffer",
 				},
 				{
 					"<leader>gb",
 					gitsigns.blame_line,
-					desc = "Blame Like",
+					desc = "Blame Line",
 				},
 				{
 					"<leader>gB",
 					gitsigns.blame,
-					desc = "Blame",
+					desc = "Toggle Blame",
 				},
 			}
 		end,
-	},
-	{
-		"folke/which-key.nvim",
-		keys = {
-			{
-				"<leader>fb",
-				function()
-					Snacks.picker.git_branches()
-				end,
-				desc = "Pick branch",
-			},
-			{
-				"<leader>go",
-				function()
-					Snacks.gitbrowse.open({ what = "permalink", notify = false })
-				end,
-				desc = "View on github",
-			},
-			{
-				"<leader>gc",
-				function()
-					Snacks.gitbrowse.open({
-						what = "permalink",
-						notify = true,
-						open = function(url)
-							vim.fn.setreg("+", url)
-						end,
-					})
-				end,
-				desc = "Copy git permalink",
-			},
-		},
 	},
 }

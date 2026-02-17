@@ -25,7 +25,8 @@ for option, value in pairs(options) do
 	vim.opt[option] = value
 end
 
-mappings.init()
+vim.g.mapleader = " "
+vim.g.maplocalleader = "\\"
 
 require("config.lazy")
 require("polish")
