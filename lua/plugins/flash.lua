@@ -8,6 +8,11 @@ return {
 				char = {
 					jump_labels = true,
 				},
+				search = {
+					enabled = true,
+					highlight = { backdrop = false },
+					jump = { history = true, register = true, nohlsearch = true },
+				},
 			},
 			jump = {
 				autojump = true,
@@ -25,11 +30,7 @@ return {
 				"s",
 				mode = { "n", "x", "o" },
 				function()
-					require("flash").jump({
-						search = { mode = "search", max_length = 0 },
-						label = { after = { 0, 0 } },
-						pattern = "^",
-					})
+					require("flash").jump()
 				end,
 				desc = "Flash",
 			},
@@ -48,35 +49,6 @@ return {
 					require("flash").remote()
 				end,
 				desc = "Remote Flash",
-			},
-			{
-				"R",
-				mode = { "o", "x" },
-				function()
-					require("flash").treesitter_search()
-				end,
-				desc = "Treesitter Search",
-			},
-			{
-				"<c-s>",
-				mode = { "c" },
-				function()
-					require("flash").toggle()
-				end,
-				desc = "Toggle Flash Search",
-			},
-			{
-				"<c-space>",
-				mode = { "n", "o", "x" },
-				function()
-					require("flash").treesitter({
-						actions = {
-							["<c-space>"] = "next",
-							["<BS>"] = "prev",
-						},
-					})
-				end,
-				desc = "Treesitter Incremental Selection",
 			},
 		},
 	},
