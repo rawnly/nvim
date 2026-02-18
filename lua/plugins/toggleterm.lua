@@ -62,7 +62,7 @@ return {
     "akinsho/toggleterm.nvim",
     version = '*',
     opts = {
-      open_mapping = [[<c-'>]],
+      open_mapping = [[<c-\>]], -- or { [[<c-\>]], [[<c-¥>]] } if you also use a Japanese keyboard.
       autochdir = true,
       direction = 'horizontal',
       size = function(t)
@@ -74,6 +74,33 @@ return {
       end
     },
     keys = {
+      {
+        "<c-\\>",
+        function()
+          require("toggleterm").toggle()
+        end,
+        desc = "Terminal"
+      },
+      {
+        "gt",
+        mode = 'n',
+        function()
+          require("toggleterm").send_lines_to_terminal('single_line', true, {
+            args = vim.v.count
+          })
+        end,
+        desc = "Send line to terminal"
+      },
+      {
+        "<c-\\>",
+        mode = 'v',
+        function()
+          require("toggleterm").send_lines_to_terminal('visual_selection', true, {
+            args = vim.v.count
+          })
+        end,
+        desc = "Send selection to terminal"
+      },
       {
         "<leader>rl",
         function()

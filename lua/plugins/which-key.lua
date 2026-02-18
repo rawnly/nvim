@@ -1,4 +1,4 @@
-local icons = require("icons")
+icons = require("icons")
 
 return {
   {
