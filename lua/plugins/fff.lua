@@ -37,6 +37,14 @@ return {
 			desc = "FFFind files",
 		},
 		{
+			"<leader>fF",
+			function()
+				local git_root = vim.fn.system("git rev-parse --show-toplevel")
+				require("fff").find_files_in_dir(git_root)
+			end,
+			desc = "FFFind files",
+		},
+		{
 			"<leader>fw",
 			function()
 				require("fff").live_grep()
