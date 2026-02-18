@@ -22,6 +22,7 @@ return {
 	},
 	{
 		"rawnly/gist.nvim",
+		dev = true,
 		opts = {
 			platform = "termbin",
 		},
