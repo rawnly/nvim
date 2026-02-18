@@ -9,8 +9,8 @@ return {
 	end,
 	opts = {
 		prompt = "> ",
-		icons = { enabled = false },
 		layout = {
+			preview_position = "top",
 			prompt_position = "top",
 			width = 0.9,
 			height = 0.9,
@@ -22,7 +22,6 @@ return {
 		keymaps = {
 			move_up = { "<C-k>", "<Up>", "<C-p>" },
 			move_down = { "<C-j>", "<Down>", "<C-n>" },
-			-- cycle_previous_query = { "<C-p>" }
 		},
 		git = {
 			status_text_color = true,
@@ -43,6 +42,15 @@ return {
 				require("fff").live_grep()
 			end,
 			desc = "FFFuzzy grep",
+		},
+		{
+			"<leader>fc",
+			function()
+				require("fff").live_grep({
+					query = vim.fn.expand("<cword>"),
+				})
+			end,
+			desc = "Search current word",
 		},
 		{
 			"ff",
