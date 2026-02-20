@@ -49,7 +49,7 @@ return {
     -- refer to the configuration section below
     bigfile = { enabled = true },
     dashboard = { enabled = false },
-    zen = { enabled = true },
+    zen = { enabled = false },
     explorer = { enabled = false },
     indent = { enabled = true },
     input = { enabled = true },
@@ -59,6 +59,7 @@ return {
     scope = { enabled = true },
     scroll = { enabled = false },
     statuscolumn = { enabled = true },
+    -- handle LSP References
     words = { enabled = true },
     scratch = {
       win_by_ft = {
@@ -116,11 +117,24 @@ return {
   },
   keys = {
     {
-      "<leader>fr",
+      "<leader>go",
       function()
-        Snacks.picker.recent()
+        Snacks.gitbrowse.open({ what = "permalink", notify = false })
       end,
-      desc = "Recent",
+      desc = "View on github",
+    },
+    {
+      "<leader>gy",
+      function()
+        Snacks.gitbrowse.open({
+          what = "permalink",
+          notify = true,
+          open = function(url)
+            vim.fn.setreg("+", url)
+          end,
+        })
+      end,
+      desc = "Copy git permalink",
     },
     {
       "<leader>.",
