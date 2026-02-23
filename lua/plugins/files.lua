@@ -41,4 +41,18 @@ return {
       },
     },
   },
+  {
+    "kelly-lin/ranger.nvim",
+    opts = {
+      replace_netrw = true
+    },
+    keys = {
+      {
+        '<leader>ra',
+        function() require("ranger-nvim").open(true) end,
+        desc = 'Ranger',
+        mode = 'n',
+      }
+    }
+  }
 }
