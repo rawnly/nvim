@@ -37,8 +37,14 @@ for option, value in pairs(options) do
   vim.opt[option] = value
 end
 
-vim.g.mapleader = " "
-vim.g.maplocalleader = "\\"
+local globals = {
+  mapleader = " ",
+  maplocalleader = "\\"
+}
+
+for opt, value in pairs(globals) do
+  vim.g[opt] = value
+end
 
 require("config.lazy")
 require("polish")
