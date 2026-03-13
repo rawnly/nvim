@@ -49,7 +49,7 @@ end
 require("config.lazy")
 require("polish")
 
-vim.cmd.colorscheme("nyx")
+vim.cmd.colorscheme("koda")
 
 if vim.lsp.inlay_hint then
   -- Enable inlay hints by default
