@@ -4,7 +4,26 @@ return {
 	{
 		"saghen/blink.cmp",
 		-- optional: provides snippets for the snippet source
-		dependencies = { "rafamadriz/friendly-snippets" },
+		dependencies = {
+			{
+				"L3MON4D3/LuaSnip",
+				build = "make install_jsregexp",
+				config = function()
+					local luasnip = require("luasnip")
+
+					-- Loads all the snippets installed by extensions in vscode.
+					-- require('luasnip.loaders.from_vscode').lazy_load()
+					require("luasnip.loaders.from_vscode").load({ paths = "~/.config/nvim/snippets" })
+
+					luasnip.config.set_config({
+						region_check_events = "InsertEnter",
+						delete_check_events = "InsertLeave",
+					})
+
+					luasnip.config.setup({})
+				end,
+			},
+		},
 
 		-- use a release tag to download pre-built binaries
 		version = "1.*",
@@ -32,9 +51,12 @@ return {
 			--
 			-- See :h blink-cmp-config-keymap for defining your own keymap
 			keymap = {
-				preset = "enter",
-				["<Tab>"] = { "select_and_accept", "fallback" },
+				preset = "super-tab",
+				-- ["<Tab>"] = { "fallback" },
+				-- ["<S-Tab>"] = { "snippet_forward", "fallback" },
 			},
+
+			snippets = { preset = "luasnip" },
 
 			appearance = {
 				-- 'mono' (default) for 'Nerd Font Mono' or 'normal' for 'Nerd Font'
@@ -47,7 +69,7 @@ return {
 			completion = {
 				documentation = {
 					auto_show = true,
-					auto_show_delay_ms = 250,
+					auto_show_delay_ms = 150,
 					treesitter_highlighting = true,
 					window = { border = "rounded" },
 				},
@@ -60,7 +82,8 @@ return {
 			-- Default list of enabled providers defined so that you can extend it
 			-- elsewhere in your config, without redefining it, due to `opts_extend`
 			sources = {
-				default = { "lsp", "path", "buffer", "snippets" },
+				-- default = { "lsp", "path", "buffer", "snippets" },
+				default = { "snippets", "lsp", "path", "buffer" },
 			},
 
 			-- (Default) Rust fuzzy matcher for typo resistance and significantly better performance
