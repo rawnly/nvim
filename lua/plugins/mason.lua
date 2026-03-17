@@ -13,11 +13,13 @@ return {
 		opts = {
 			automatic_enable = true,
 			ensure_installed = {
+				"stylua",
 				"gopls",
 				"zls",
 				"biome",
 				"jsonls",
 				"yamlls",
+				"taplo",
 				"docker_compose_language_service",
 				"jdtls",
 				"ruff",

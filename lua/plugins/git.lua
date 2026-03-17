@@ -1,22 +1,22 @@
 ---@type LazySpec
 return {
 	-- { "akinsho/git-conflict.nvim", version = "*", config = true },
-	{
-		"HarshK97/diffmantic.nvim",
-		version = "*",
-		config = function()
-			require("diffmantic").setup()
-		end,
-	},
-	{ "sindrets/diffview.nvim", enabled = false, config = true },
-	{
-		"NeogitOrg/neogit",
-		enabled = false,
-		dependencies = {
-			"nvim-lua/plenary.nvim",
-			"sindrets/diffview.nvim",
-		},
-	},
+	-- {
+	-- 	"HarshK97/diffmantic.nvim",
+	-- 	version = "*",
+	-- 	config = function()
+	-- 		require("diffmantic").setup()
+	-- 	end,
+	-- },
+	-- { "sindrets/diffview.nvim", enabled = false, config = true },
+	-- {
+	-- 	"NeogitOrg/neogit",
+	-- 	enabled = false,
+	-- 	dependencies = {
+	-- 		"nvim-lua/plenary.nvim",
+	-- 		"sindrets/diffview.nvim",
+	-- 	},
+	-- },
 	{
 		"lewis6991/gitsigns.nvim",
 		opts = {},
