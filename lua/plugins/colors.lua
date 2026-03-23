@@ -1,5 +1,13 @@
 ---@type LazySpec
 return {
+	{
+		"metalelf0/jellybeans-nvim",
+		lazy = false,
+		priority = 1000,
+		dependencies = {
+			"rktjmp/lush.nvim",
+		},
+	},
 	{ "shaunsingh/moonlight.nvim" },
 	{ "0xleodevv/oc-2.nvim" },
 	{

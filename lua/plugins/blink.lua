@@ -51,9 +51,12 @@ return {
 			--
 			-- See :h blink-cmp-config-keymap for defining your own keymap
 			keymap = {
-				preset = "super-tab",
-				-- ["<Tab>"] = { "fallback" },
-				-- ["<S-Tab>"] = { "snippet_forward", "fallback" },
+				preset = "enter",
+
+				["<C-u>"] = { "scroll_signature_up", "fallback" },
+				["<C-d>"] = { "scroll_signature_down", "fallback" },
+				["<Tab>"] = { "accept", "fallback" },
+				["<S-Tab>"] = { "snippet_forward", "fallback" },
 			},
 
 			snippets = { preset = "luasnip" },

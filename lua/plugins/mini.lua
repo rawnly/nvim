@@ -24,12 +24,13 @@ return {
 		version = "*",
 		config = function()
 			local starter = require("mini.starter")
+			local bivio = require("bivio")
 
 			local function openProject(path)
 				return function()
 					vim.cmd("cd " .. path)
 					require("persistence").load()
-					-- vim.cmd("Outline")
+					vim.cmd("Outline")
 				end
 			end
 
@@ -39,10 +40,12 @@ return {
 				items = {
 					{ name = "Edit new buffer", action = "enew", section = "Builtin actions" },
 					{ name = "Quit Neovim", action = "qall", section = "Builtin actions" },
+
 					{ name = "nvim", action = "e ~/.config/nvim/init.lua", section = "Config" },
 					{ name = "ghostty", action = "e ~/.config/ghostty/config", section = "Config" },
 					{ name = "fish", action = "e ~/.config/fish/config.fish", section = "Config" },
-					starter.sections.recent_files(5, true),
+
+					require("bivio").starter_section(),
 				},
 				content_hooks = {
 					starter.gen_hook.adding_bullet(),

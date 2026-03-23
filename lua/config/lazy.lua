@@ -1,3 +1,4 @@
+local config = require("shared_config")
 -- Bootstrap lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
@@ -25,7 +26,7 @@ require("lazy").setup({
 	-- Configure any other settings here. See the documentation for more details.
 	-- colorscheme that will be used when installing plugins.
 	install = {
-		colorscheme = { "oc-2" },
+		colorscheme = { config.colorscheme },
 	},
 	-- automatically check for plugin updates
 	checker = { enabled = true },
