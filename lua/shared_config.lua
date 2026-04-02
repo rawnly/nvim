@@ -1,3 +1,3 @@
 return {
-	colorscheme = "jellybeans-nvim",
+	colorscheme = "astrodark",
 }

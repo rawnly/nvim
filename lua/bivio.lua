@@ -1,6 +1,11 @@
 local M = {}
 
 function M.list(limit)
+	if not M.is_installed() then
+		vim.notify("bvo not installed")
+		return
+	end
+
 	limit = limit or 10
 
 	local rawjson = vim.fn.system("bvo list --json --limit " .. limit)
@@ -16,7 +21,17 @@ function M.list(limit)
 	return data
 end
 
+function M.is_installed()
+	vim.fn.system("command -v bvo &> /dev/null")
+	return vim.v.shell_error == 0
+end
+
 function M.starter_section(name)
+	if not M.is_installed() then
+		vim.notify("bvo not installed")
+		return
+	end
+
 	local function openProject(path)
 		return function()
 			vim.cmd("cd " .. path)
@@ -39,6 +54,11 @@ function M.starter_section(name)
 end
 
 function M.pick()
+	if not M.is_installed() then
+		vim.notify("bvo not installed")
+		return
+	end
+
 	local rawjson = vim.fn.system("bvo list --json")
 	if vim.v.shell_error ~= 0 then
 		error("bvo returned an error")

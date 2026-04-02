@@ -21,6 +21,7 @@ return {
 	},
 	{
 		"nvim-mini/mini.starter",
+		enabled = false,
 		version = "*",
 		config = function()
 			local starter = require("mini.starter")

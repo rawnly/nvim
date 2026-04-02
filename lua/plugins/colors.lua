@@ -1,5 +1,6 @@
 ---@type LazySpec
 return {
+	{ "astronvim/astrotheme", opts = {} },
 	{
 		"metalelf0/jellybeans-nvim",
 		lazy = false,

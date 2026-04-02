@@ -5,6 +5,7 @@ return {
 		"nvim-treesitter/nvim-treesitter",
 		lazy = false,
 		build = ":TSUpdate",
+		branch = "main",
 		opts = {
 			sync_install = true,
 			auto_install = true,
@@ -35,7 +36,7 @@ return {
 		},
 		config = function(_, opts)
 			require("nvim-treesitter.install").prefer_git = true
-		require("nvim-treesitter.config").setup(opts)
+			require("nvim-treesitter.config").setup(opts)
 
 			vim.api.nvim_create_autocmd("FileType", {
 				callback = function(args)

@@ -34,6 +34,7 @@ return {
 	{
 		"nvim-lualine/lualine.nvim",
 		event = "VeryLazy",
+		enabled = false,
 		opts = function()
 			return {
 				disabled_filetypes = {
