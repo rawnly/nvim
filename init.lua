@@ -57,7 +57,4 @@ vim.cmd("packadd nvim.undotree")
 
 vim.keymap.set("n", "<leader>u", require("undotree").open)
 
-if vim.lsp.inlay_hint then
-	-- Enable inlay hints by default
-	vim.lsp.inlay_hint.enable()
-end
+vim.lsp.inlay_hint.enable(true)
