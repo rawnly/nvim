@@ -48,13 +48,13 @@ end
 
 require("config.lazy")
 require("polish")
+require("ui")
 
 local config = require("shared_config")
 vim.cmd.colorscheme(config.colorscheme)
 
 -- Pack
 vim.cmd("packadd nvim.undotree")
-
 vim.keymap.set("n", "<leader>u", require("undotree").open)
 
 vim.lsp.inlay_hint.enable(true)

@@ -1,5 +1,11 @@
 ---@type LazySpec
 return {
+	{
+		"ember-theme/nvim",
+		name = "ember",
+		priority = 1000,
+		opts = { variant = "ember" },
+	},
 	{ "astronvim/astrotheme", opts = {} },
 	{
 		"metalelf0/jellybeans-nvim",

@@ -22,15 +22,13 @@ return {
 	},
 	{
 		"rawnly/gh-actions-version.nvim",
+		enabled = false,
 		dev = true,
 		opts = {},
 	},
 	{
 		"rawnly/gist.nvim",
 		dev = true,
-		opts = {
-			platform = "termbin",
-		},
 	},
 	{
 		"rawnly/nyx.nvim",

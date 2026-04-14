@@ -32,7 +32,8 @@ return {
 				-- "shellcheck",
 				"jdtls",
 				"ruff",
-				"pyright",
+				"ty",
+				-- "pyright",
 			},
 			handlers = {
 				function(server_name)
