@@ -3,7 +3,7 @@ return {
 		"mrjones2014/smart-splits.nvim",
 		keys = {
 			{ "|", ":vsplit<CR>" },
-			-- reisze splits
+			-- resize splits
 			{
 				"<A-h>",
 				function()

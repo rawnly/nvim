@@ -47,11 +47,13 @@ for opt, value in pairs(globals) do
 end
 
 require("config.lazy")
-require("polish")
-require("ui")
 
 local config = require("shared_config")
-vim.cmd.colorscheme(config.colorscheme)
+vim.o.background = vim.env.NVIM_BACKGROUND or "dark"
+vim.cmd.colorscheme(config.colorscheme())
+
+require("polish")
+require("ui")
 
 -- Pack
 vim.cmd("packadd nvim.undotree")

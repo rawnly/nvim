@@ -1,5 +1,21 @@
+local config = require("shared_config")
+
 ---@type LazySpec
 return {
+	{
+		"afonsofrancof/OSC11.nvim",
+		opts = {
+			-- Function to call when switching to dark theme
+			on_dark = function()
+				vim.opt.background = "dark"
+				vim.cmd("colorscheme " .. config.colorschemes.dark)
+			end,
+			-- Function to call when switching to light theme
+			on_light = function()
+				vim.cmd("colorscheme " .. config.colorschemes.light)
+			end,
+		},
+	},
 	{
 		"akinsho/bufferline.nvim",
 		version = "*",
