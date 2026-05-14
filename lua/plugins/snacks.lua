@@ -54,7 +54,7 @@ return {
 		indent = { enabled = true },
 		input = { enabled = true },
 		picker = { enabled = true },
-		notifier = { enabled = true },
+		notifier = { enabled = false },
 		quickfile = { enabled = true },
 		scope = { enabled = true },
 		scroll = { enabled = false },
@@ -104,7 +104,7 @@ return {
 					finder = "recent_projects",
 					format = "file",
 					dev = {
-						"~/Developer/projects",
+						"~/Developer/satispay",
 						"~/Developer/RUST",
 						"~/Developer/Go",
 						"~/Developer/nvim-plugins/rawnly",

@@ -1,6 +1,7 @@
 local config = require("shared_config")
 
 ---@type LazySpec
+-- lazy.nvim
 return {
 	{
 		"afonsofrancof/OSC11.nvim",

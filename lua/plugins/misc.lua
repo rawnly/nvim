@@ -1,91 +1,51 @@
 return {
 	{
-		"folke/noice.nvim",
-		enabled = false,
-		event = "VeryLazy",
-		dependencies = { "MunifTanjim/nui.nvim" },
-		opts = {
-			views = {
-				cmdline_popup = {
-					position = { row = 23 },
-				},
-			},
-			presets = {
-				lsp_doc_border = true,
-			},
-			lsp = {
-				progress = {
-					enabled = false,
-				},
-				hover = {
-					enabled = true,
-				},
-				override = {
-					["vim.lsp.util.convert_input_to_markdown_lines"] = true,
-					["vim.lsp.util.stylize_markdown"] = true,
-					["cmp.entry.get_documentation"] = true,
-				},
-			},
-			notify = {
-				view = "mini",
-			},
-			routes = {
-				{
-					filter = {
-						event = "notify",
-						find = "No information available",
-					},
-					opts = { skip = true },
-				},
-			},
-		},
-	},
-	{
-		"folke/persistence.nvim",
-		event = "BufReadPre",
-		opts = {
-			need = 1,
-			branch = true,
-		},
-		keys = {
-			{
-				"<leader>qs",
-				function()
-					require("persistence").load()
-				end,
-				desc = "Load session",
-			},
-			{
-				"<leader>qS",
-				function()
-					require("persistence").load()
-				end,
-				desc = "Pick a session",
-			},
-			{
-				"<leader>ql",
-				function()
-					require("persistence").load()
-				end,
-				desc = "Load last session",
-			},
-			{
-				"<leader>qd",
-				function()
-					require("persistence").load()
-				end,
-				desc = "Stop persistance",
-			},
-		},
-
-		init = function()
-			vim.opt.sessionoptions =
-				{ "buffers", "curdir", "tabpages", "winsize", "help", "globals", "skiprtp", "folds" }
-		end,
-	},
-	{
 		"folke/ts-comments.nvim",
 		event = "VeryLazy",
 		opts = {},
+	},
+	-- lazy.nvim
+	{
+		"folke/noice.nvim",
+		event = "VeryLazy",
+		opts = {
+			lsp = {
+				-- override markdown rendering so that **cmp** and other plugins use **Treesitter**
+				override = {
+					["vim.lsp.util.convert_input_to_markdown_lines"] = true,
+					["vim.lsp.util.stylize_markdown"] = true,
+					["cmp.entry.get_documentation"] = true, -- requires hrsh7th/nvim-cmp
+				},
+				hover = {
+					silent = true,
+				},
+				signature = { enabled = false },
+			},
+			cmdline = {
+				enabled = false,
+			},
+			notify = {
+				enabled = false,
+			},
+			-- you can enable a preset for easier configuration
+			presets = {
+				-- bottom_search = true, -- use a classic bottom cmdline for search
+				-- command_palette = true, -- position the cmdline and popupmenu together
+				long_message_to_split = true, -- long messages will be sent to a split
+				-- inc_rename = false, -- enables an input dialog for inc-rename.nvim
+				lsp_doc_border = true, -- add a border to hover docs and signature help
+			},
+		},
+		dependencies = {
+			-- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
+			"MunifTanjim/nui.nvim",
+		},
+	},
+	{
+		"Sebastian-Nielsen/better-type-hover",
+		ft = { "typescript", "typescriptreact" },
+		config = function()
+			require("better-type-hover").setup()
+		end,
 	},
 }

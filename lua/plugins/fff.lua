@@ -1,6 +1,7 @@
 ---@type
 return {
 	"dmtrKovalenko/fff.nvim",
+	version = "*",
 	dependencies = {
 		"nvim-lua/plenary.nvim",
 	},

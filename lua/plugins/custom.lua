@@ -29,6 +29,7 @@ return {
 	{
 		"rawnly/gist.nvim",
 		dev = true,
+		opts = {},
 	},
 	{
 		"rawnly/nyx.nvim",

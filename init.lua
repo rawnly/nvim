@@ -31,6 +31,9 @@ local options = {
 	-- split
 	splitbelow = true,
 	splitright = true,
+
+	-- floats
+	winborder = "rounded",
 }
 
 for option, value in pairs(options) do

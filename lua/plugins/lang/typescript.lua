@@ -18,8 +18,22 @@ return {
 			---@module "typescript-tools.nvim"
 			---@class Settings
 			settings = {
+				separate_diagnostic_server = true,
+				publish_diagnostic_on = "insert_leave",
+				tsserver_max_memory = 8192,
+				complete_function_calls = false,
+				expose_as_code_action = {},
 				tsserver_file_preferences = {
-					includeInlayParameterNameHints = "all",
+					includeInlayParameterNameHints = "literals",
+					includeInlayFunctionParameterTypeHints = false,
+					includeInlayVariableTypeHints = false,
+					includeInlayPropertyDeclarationTypeHints = false,
+					includeInlayFunctionLikeReturnTypeHints = false,
+					includeCompletionsForModuleExports = true,
+				},
+				tsserver_format_options = {
+					allowIncompleteCompletions = false,
+					allowRenameOfImportPath = false,
 				},
 			},
 		},

@@ -1,35 +1,35 @@
 ---@type LazySpec
 return {
 	{
+		"jpwol/thorn.nvim",
+		priority = 1000,
+		opts = {},
+	},
+	{
 		"ember-theme/nvim",
 		name = "ember",
 		priority = 1000,
 		opts = { variant = "ember" },
 	},
-	{ "astronvim/astrotheme", opts = {} },
 	{
-		"metalelf0/jellybeans-nvim",
+		"scottmckendry/cyberdream.nvim",
 		lazy = false,
 		priority = 1000,
-		dependencies = {
-			"rktjmp/lush.nvim",
+		opts = {
+			variant = "auto",
+			transparent = true,
 		},
 	},
-	{ "shaunsingh/moonlight.nvim" },
-	{ "0xleodevv/oc-2.nvim" },
+	{
+		"0xleodevv/oc-2.nvim",
+		lazy = false,
+		priority = 1000,
+	},
 	{
 		"oskarnurm/koda.nvim",
 		lazy = false, -- make sure we load this during startup if it is your main colorscheme
 		priority = 1000, -- make sure to load this before all the other start plugins
 		opts = {},
-	},
-	-- Lua
-	{
-		"f-person/auto-dark-mode.nvim",
-		enabled = false,
-		opts = {
-			update_interval = 500,
-		},
 	},
 	{
 		"folke/tokyonight.nvim",
