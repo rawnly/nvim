@@ -1,8 +1,8 @@
 local M = {}
 
 M.colorschemes = {
-	dark = "thorn",
-	light = "cyberdream",
+	dark = "ember",
+	light = "ember",
 }
 
 M.colorscheme = function()
