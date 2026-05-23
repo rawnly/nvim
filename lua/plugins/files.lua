@@ -14,9 +14,18 @@ return {
 		dependencies = {
 			{
 				"junegunn/fzf",
-				opts = {
-					extra_opts = { "--bind", "ctrl-f:preview-half-page-down,ctrl-b:preview-half-page-up" },
-				},
+				config = function()
+					vim.g.fzf_layout = {
+						window = {
+							width = 0.9,
+							height = 0.6,
+						},
+					}
+					vim.g.fzf_preview_window = {
+						"right:50%",
+						"ctrl-f:preview-half-page-down,ctrl-b:preview-half-page-up",
+					}
+				end,
 			},
 		},
 	},
