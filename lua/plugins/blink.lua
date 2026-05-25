@@ -16,8 +16,10 @@ return {
 					require("luasnip.loaders.from_vscode").load({ paths = "~/.config/nvim/snippets" })
 
 					luasnip.config.set_config({
-						region_check_events = "InsertEnter",
-						delete_check_events = "InsertLeave",
+						region_check_events = "CursorMoved,CursorMovedI",
+						delete_check_events = "TextChanged,InsertLeave",
+						-- region_check_events = "InsertEnter",
+						-- delete_check_events = "InsertLeave",
 					})
 
 					luasnip.config.setup({})
@@ -55,8 +57,8 @@ return {
 
 				["<C-u>"] = { "scroll_signature_up", "fallback" },
 				["<C-d>"] = { "scroll_signature_down", "fallback" },
-				["<Tab>"] = { "accept", "fallback" },
-				["<S-Tab>"] = { "snippet_forward", "fallback" },
+				["<Tab>"] = { "snippet_forward", "accept", "fallback" },
+				["<S-Tab>"] = { "snippet_backward", "fallback" },
 			},
 
 			snippets = { preset = "luasnip" },
@@ -71,8 +73,7 @@ return {
 			-- (Default) Only show the documentation popup when manually triggered
 			completion = {
 				documentation = {
-					auto_show = true,
-					auto_show_delay_ms = 150,
+					auto_show = false,
 					treesitter_highlighting = true,
 					window = { border = "rounded" },
 				},

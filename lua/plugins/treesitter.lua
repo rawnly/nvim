@@ -7,7 +7,7 @@ return {
 		build = ":TSUpdate",
 		branch = "main",
 		opts = {
-			sync_install = true,
+			sync_install = false,
 			auto_install = true,
 			highlight = { enable = true },
 			ensure_installed = {

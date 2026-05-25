@@ -1,6 +1,20 @@
 ---@type LazySpec
 return {
 	{
+		"projekt0n/github-nvim-theme",
+		name = "github-theme",
+		opts = {
+			options = {
+				transparent = false,
+				styles = {
+					comments = "italic",
+					keywords = "bold",
+					types = "italic,bold",
+				},
+			},
+		},
+	},
+	{
 		"jpwol/thorn.nvim",
 		priority = 1000,
 		opts = {},
@@ -17,7 +31,7 @@ return {
 		priority = 1000,
 		opts = {
 			variant = "auto",
-			transparent = true,
+			transparent = false,
 		},
 	},
 	{

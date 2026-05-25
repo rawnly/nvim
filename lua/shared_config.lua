@@ -2,7 +2,7 @@ local M = {}
 
 M.colorschemes = {
 	dark = "cyberdream",
-	light = "cyberdream",
+	light = "github_light_default",
 }
 
 M.colorscheme = function()

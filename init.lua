@@ -49,6 +49,15 @@ for opt, value in pairs(globals) do
 	vim.g[opt] = value
 end
 
+vim.api.nvim_create_autocmd({ "VimLeave", "VimSuspend" }, {
+	pattern = "*",
+	desc = "Restore terminal cursor",
+	callback = function()
+		vim.opt.guicursor = ""
+		vim.fn.chansend(vim.v.stderr, "\x1b[6 q")
+	end,
+})
+
 require("config.lazy")
 
 local config = require("shared_config")
@@ -61,5 +70,3 @@ require("ui")
 -- Pack
 vim.cmd("packadd nvim.undotree")
 vim.keymap.set("n", "<leader>u", require("undotree").open)
-
-vim.lsp.inlay_hint.enable(true)
