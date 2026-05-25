@@ -29,7 +29,10 @@ return {
 	{
 		"rawnly/gist.nvim",
 		dev = true,
-		opts = {},
+		---@type Gist.Config
+		opts = {
+			platform = "termbin",
+		},
 	},
 	{
 		"rawnly/nyx.nvim",
