@@ -23,7 +23,6 @@ return {
 				{ "<leader>s", icon = icons.globe, group = "Search & Replace" },
 				{ "<leader>b", icon = icons.file.files, group = "Buffers" },
 				{ "<leader>t", icon = icons.prism, group = "TargetProcess" },
-				{ "<leader>q", icon = icons.dropdown, group = "Session" },
 				{ "<leader>r", icon = icons.lightning, group = "Run" },
 			},
 			plugins = {
