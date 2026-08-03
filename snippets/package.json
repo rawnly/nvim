@@ -8,6 +8,12 @@
           "typescriptreact"
         ],
         "path": "./effect.json"
+      },
+      {
+        "language": [
+          "typescriptreact"
+        ],
+        "path": "./react.json"
       }
     ]
   }

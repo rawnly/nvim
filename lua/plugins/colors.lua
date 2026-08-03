@@ -27,6 +27,10 @@ return {
 		},
 	},
 	{
+		"rebelot/kanagawa.nvim",
+		opts = {},
+	},
+	{
 		"jpwol/thorn.nvim",
 		priority = 1000,
 		opts = {},
@@ -43,7 +47,7 @@ return {
 		priority = 1000,
 		opts = {
 			variant = "auto",
-			transparent = false,
+			transparent = true,
 		},
 	},
 	{
