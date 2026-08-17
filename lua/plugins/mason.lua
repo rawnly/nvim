@@ -17,10 +17,12 @@ return {
 					"ts_ls",
 					"vtsls",
 					"tsgo",
+					-- nvim-java and rustaceanvim own their language-server setup.
+					"jdtls",
+					"rust_analyzer",
 				},
 			},
 			ensure_installed = {
-				"stylua",
 				"gopls",
 				"zls",
 				"biome",

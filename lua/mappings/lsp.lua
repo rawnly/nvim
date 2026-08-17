@@ -10,7 +10,11 @@ return {
 	{
 		"<leader>lf",
 		function(bufnr)
-			vim.lsp.buf.format({ async = true, bufnr = bufnr })
+			require("conform").format({
+				async = true,
+				bufnr = bufnr,
+				lsp_format = "fallback",
+			})
 		end,
 		desc = "Format",
 	},

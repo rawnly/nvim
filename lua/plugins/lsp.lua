@@ -128,9 +128,12 @@ return {
 			{
 				"<leader>lf",
 				function()
-					vim.lsp.buf.format({ async = true })
+					require("conform").format({
+						async = true,
+						lsp_format = "fallback",
+					})
 				end,
-				desc = "Rename",
+				desc = "Format",
 			},
 			{ "<leader>la", vim.lsp.buf.code_action, desc = "Code Actions" },
 			{ "<leader>ld", vim.diagnostic.open_float, desc = "Hover Diagnostics" },
