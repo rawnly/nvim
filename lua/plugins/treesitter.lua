@@ -1,5 +1,29 @@
 ---@module "lazy.nvim"
 ---@type LazySpec
+local ensure_installed = {
+	"java",
+	"kotlin",
+	"lua",
+	"vim",
+	"rust",
+	"go",
+	"astro",
+	"bash",
+	"fish",
+	"zig",
+	"tsx",
+	"caddy",
+	"nginx",
+	"yaml",
+	"toml",
+	"css",
+	"html",
+	"markdown",
+	"markdown_inline",
+	"typescript",
+	"javascript",
+}
+
 return {
 	{
 		"nvim-treesitter/nvim-treesitter",
@@ -7,36 +31,12 @@ return {
 		build = ":TSUpdate",
 		branch = "main",
 		opts = {
-			sync_install = false,
-			auto_install = true,
-			highlight = { enable = true },
-			ensure_installed = {
-				"java",
-				"kotlin",
-				"lua",
-				"vim",
-				"rust",
-				"go",
-				"astro",
-				"bash",
-				"fish",
-				"zig",
-				"tsx",
-				"caddy",
-				"nginx",
-				"yaml",
-				"toml",
-				"css",
-				"html",
-				"markdown",
-				"markdown_inline",
-				"typescript",
-				"javascript",
-			},
+			ensure_installed = ensure_installed,
 		},
 		config = function(_, opts)
 			require("nvim-treesitter.install").prefer_git = true
-			require("nvim-treesitter.config").setup(opts)
+			require("nvim-treesitter").setup()
+			require("nvim-treesitter").install(opts.ensure_installed)
 
 			vim.api.nvim_create_autocmd("FileType", {
 				callback = function(args)

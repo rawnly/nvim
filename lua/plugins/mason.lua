@@ -28,7 +28,7 @@ return {
 				"biome",
 				"jsonls",
 				"yamlls",
-				"taplo",
+				"tombi",
 				"docker_compose_language_service",
 				"lua_ls",
 				"tsc",
