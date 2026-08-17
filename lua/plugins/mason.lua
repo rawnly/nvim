@@ -11,7 +11,14 @@ return {
 	{
 		"mason-org/mason-lspconfig.nvim",
 		opts = {
-			automatic_enable = true,
+			automatic_enable = {
+				exclude = {
+					-- TypeScript 7's native LSP is configured as `tsc` below.
+					"ts_ls",
+					"vtsls",
+					"tsgo",
+				},
+			},
 			ensure_installed = {
 				"stylua",
 				"gopls",
@@ -22,6 +29,7 @@ return {
 				"taplo",
 				"docker_compose_language_service",
 				"lua_ls",
+				"tsc",
 				-- "docker-language-server",
 				-- "fish-lsp",
 				-- "css-lsp",
@@ -34,15 +42,6 @@ return {
 				"ruff",
 				"ty",
 				-- "pyright",
-			},
-			handlers = {
-				function(server_name)
-					if server_name == "tsserver" or server_name == "ts_ls" then
-						return
-					end
-
-					require("lspconfig")[server_name].setup({})
-				end,
 			},
 		},
 		dependencies = {
