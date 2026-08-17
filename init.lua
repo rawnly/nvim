@@ -60,9 +60,8 @@ vim.api.nvim_create_autocmd({ "VimLeave", "VimSuspend" }, {
 
 require("config.lazy")
 
-local config = require("shared_config")
 vim.o.background = vim.env.NVIM_BACKGROUND or "dark"
-vim.cmd.colorscheme(config.colorscheme())
+vim.cmd.colorscheme("base16-mountain")
 
 require("polish")
 require("ui")

@@ -1,6 +1,18 @@
 ---@type LazySpec
 return {
 	{
+		"RRethy/base16-nvim",
+		lazy = false,
+		priority = 1000,
+		config = function() end,
+	},
+	{
+		"wtfox/luna.nvim",
+		lazy = false,
+		priority = 1000,
+		opts = {},
+	},
+	{
 		"projekt0n/github-nvim-theme",
 		name = "github-theme",
 		opts = {

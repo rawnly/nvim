@@ -1,5 +1,3 @@
-local config = require("shared_config")
-
 ---@type LazySpec
 -- lazy.nvim
 return {
@@ -55,7 +53,6 @@ return {
 					"mason",
 				},
 				options = {
-					-- theme = require("shared_config").colorscheme,
 					globalstatus = vim.o.laststatus == 3,
 					disabled_filetypes = {
 						statusline = {
