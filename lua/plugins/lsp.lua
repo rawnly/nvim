@@ -56,6 +56,8 @@ return {
 		keys = {
 			{ "gr", "<CMD>Glance references<CR>", desc = "Go to references" },
 			{ "gd", "<CMD>Glance definitions<CR>", desc = "Go to definitions" },
+			{ "gt", "<CMD>Glance type_definitions<CR>", desc = "Go to type-definitions" },
+			{ "gR", "<CMD>Glance resume<CR>", desc = "Resume goto" },
 		},
 	},
 	{

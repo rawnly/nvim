@@ -52,7 +52,7 @@ end
 require("config.lazy")
 
 vim.o.background = vim.env.NVIM_BACKGROUND or "dark"
-vim.cmd.colorscheme("base16-mountain")
+vim.cmd.colorscheme("sora")
 
 require("polish")
 require("ui")

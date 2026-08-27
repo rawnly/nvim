@@ -7,6 +7,12 @@ return {
 		config = function() end,
 	},
 	{
+		"Aejkatappaja/sora",
+		lazy = false,
+		priority = 1000,
+		opts = {},
+	},
+	{
 		"wtfox/luna.nvim",
 		lazy = false,
 		priority = 1000,
@@ -43,6 +49,7 @@ return {
 	},
 	{
 		"scottmckendry/cyberdream.nvim",
+		enabled = false,
 		lazy = false,
 		priority = 1000,
 		opts = {
